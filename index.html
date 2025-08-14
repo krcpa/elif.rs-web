@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="elif.rs - LLM-friendly Rust web framework designed for AI agent-driven development">
+    <title>elif.rs - AI-Optimized Rust Web Framework</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero">
+                <h1 class="logo">elif.rs</h1>
+                <p class="tagline">LLM-friendly Rust web framework designed for AI agent-driven development</p>
+                
+                <div class="status-badge">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+                        <path d="M12 22V12"></path>
+                        <path d="M12 12L2 7"></path>
+                        <path d="M12 12l10-5"></path>
+                    </svg>
+                    <span>In Active Development</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="description">
+                <h2>What is elif.rs?</h2>
+                <p>
+                    <strong>elif.rs</strong> is a spec-first, AI-agent-optimized web framework designed to enable AI agents 
+                    (like Claude) to build complex web applications through safe, structured code generation with 
+                    MARKER-based editing zones.
+                </p>
+                <p>
+                    Unlike traditional web frameworks designed for human developers, elif.rs is specifically 
+                    architected for AI agents with robust dependency injection, configuration-driven architecture, 
+                    and clear separation of concerns.
+                </p>
+            </section>
+
+            <section class="features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI-Safe Architecture</h3>
+                        <p>Robust dependency injection and lifecycle management designed for AI-driven development</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📝</div>
+                        <h3>Spec-First Development</h3>
+                        <p>Configuration-driven architecture that AI agents can understand and manipulate safely</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Modular Design</h3>
+                        <p>Plugin system for extensible functionality with clear boundaries</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🔧</div>
+                        <h3>LLM-Optimized</h3>
+                        <p>Clear separation of concerns and predictable patterns for AI comprehension</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="progress">
+                <h2>Development Progress</h2>
+                <div class="phase-list">
+                    <div class="phase completed">
+                        <div class="phase-header">
+                            <span class="phase-status">✅</span>
+                            <h3>Phase 1: Architecture Foundation</h3>
+                            <span class="phase-tag">Complete</span>
+                        </div>
+                        <ul>
+                            <li>Dependency injection system</li>
+                            <li>Service provider lifecycle management</li>
+                            <li>Module system with dependency resolution</li>
+                            <li>Configuration management with validation</li>
+                            <li>Application lifecycle and bootstrapping</li>
+                        </ul>
+                    </div>
+                    <div class="phase in-progress">
+                        <div class="phase-header">
+                            <span class="phase-status">🚧</span>
+                            <h3>Phase 2: Database Layer</h3>
+                            <span class="phase-tag">In Progress</span>
+                        </div>
+                        <ul>
+                            <li>Full ORM with relationships and query builder</li>
+                            <li>Connection pooling and transaction management</li>
+                            <li>Model events and observers</li>
+                            <li>Database seeding and factory system</li>
+                        </ul>
+                    </div>
+                    <div class="phase planned">
+                        <div class="phase-header">
+                            <span class="phase-status">📋</span>
+                            <h3>Phase 3-6: Coming Soon</h3>
+                            <span class="phase-tag">Planned</span>
+                        </div>
+                        <ul>
+                            <li>Authentication & Authorization</li>
+                            <li>Security middleware</li>
+                            <li>Developer experience tools</li>
+                            <li>Production features</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta">
+                <h2>Get Started</h2>
+                <p>elif.rs is open source and actively being developed. Join us in building the future of AI-driven web development!</p>
+                <div class="buttons">
+                    <a href="https://github.com/krcpa/elif.rs" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                    <a href="https://github.com/krcpa/elif.rs#-quick-start" class="btn btn-secondary">
+                        Documentation
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built for the future of AI-driven development 🤖</p>
+            <p>© 2025 elif.rs - MIT License</p>
+        </footer>
+    </div>
+</body>
+</html>
