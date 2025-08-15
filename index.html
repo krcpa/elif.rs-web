@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="elif.rs - The AI-Native Rust Web Framework. Build production-ready applications with LLM-optimized architecture, 155+ tests, and blazing performance.">
+    <meta name="description" content="elif.rs - The AI-Native Rust Web Framework. Build production-ready applications with LLM-optimized architecture, dependency injection, and 155+ tests.">
     <title>elif.rs - AI-Native Rust Web Framework</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
                     <a href="#features" class="nav-link">Features</a>
                     <div class="dropdown-menu">
                         <a href="#architecture">Architecture</a>
-                        <a href="#performance">Performance</a>
+                        <a href="#roadmap">Roadmap</a>
                         <a href="#security">Security</a>
                         <a href="#ai-features">AI Integration</a>
                     </div>
@@ -48,7 +48,6 @@
                 <a href="https://github.com/krcpa/elif.rs" class="github-button">
                     <i data-feather="github"></i>
                     <span class="github-stars">Star</span>
-                    <span class="stars-count">2.1k</span>
                 </a>
                 <button class="theme-toggle" aria-label="Toggle theme">
                     <i data-feather="moon"></i>
@@ -87,16 +86,16 @@
                     <div class="stat-label">Tests Passing</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">&lt;50ms</div>
-                    <div class="stat-label">Response Time</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">50k+</div>
-                    <div class="stat-label">Req/Second</div>
-                </div>
-                <div class="stat">
                     <div class="stat-value">Phase 4</div>
                     <div class="stat-label">of 9 Complete</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">Crates Published</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">MIT</div>
+                    <div class="stat-label">License</div>
                 </div>
             </div>
             <div class="hero-actions">
@@ -209,18 +208,13 @@
                         <div class="feature-icon">
                             <i data-feather="zap"></i>
                         </div>
-                        <h3>Blazing Fast</h3>
-                        <p>Built on Tokio/Axum for maximum performance and scalability.</p>
-                        <div class="performance-metrics">
-                            <div class="metric">
-                                <span class="metric-value">50k+</span>
-                                <span class="metric-label">req/s</span>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">&lt;50ms</span>
-                                <span class="metric-label">p99</span>
-                            </div>
-                        </div>
+                        <h3>Production Ready</h3>
+                        <p>Built on Tokio/Axum with async/await for modern Rust applications.</p>
+                        <ul class="feature-list compact">
+                            <li>Async runtime</li>
+                            <li>Connection pooling</li>
+                            <li>Graceful shutdown</li>
+                        </ul>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -519,108 +513,6 @@
             </div>
         </section>
 
-        <!-- Performance Benchmarks -->
-        <section class="benchmarks-section" id="performance">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-badge">Performance</span>
-                    <h2 class="section-title">Built for speed and scale</h2>
-                    <p class="section-subtitle">Benchmarked against leading frameworks</p>
-                </div>
-                <div class="benchmarks-grid">
-                    <div class="benchmark-card">
-                        <h3>Requests per Second</h3>
-                        <div class="benchmark-chart">
-                            <div class="benchmark-bar">
-                                <div class="bar-label">
-                                    <span class="framework-name">elif.rs</span>
-                                    <span class="bar-value">52,847</span>
-                                </div>
-                                <div class="bar-fill" style="width: 100%"></div>
-                            </div>
-                            <div class="benchmark-bar">
-                                <div class="bar-label">
-                                    <span class="framework-name">Actix Web</span>
-                                    <span class="bar-value">48,213</span>
-                                </div>
-                                <div class="bar-fill" style="width: 91%"></div>
-                            </div>
-                            <div class="benchmark-bar">
-                                <div class="bar-label">
-                                    <span class="framework-name">Rocket</span>
-                                    <span class="bar-value">32,156</span>
-                                </div>
-                                <div class="bar-fill" style="width: 61%"></div>
-                            </div>
-                            <div class="benchmark-bar">
-                                <div class="bar-label">
-                                    <span class="framework-name">Express.js</span>
-                                    <span class="bar-value">15,234</span>
-                                </div>
-                                <div class="bar-fill" style="width: 29%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="benchmark-card">
-                        <h3>Response Time (p99)</h3>
-                        <div class="benchmark-metrics">
-                            <div class="metric-item">
-                                <div class="metric-header">
-                                    <span class="metric-name">elif.rs</span>
-                                    <span class="metric-badge best">Best</span>
-                                </div>
-                                <div class="metric-value">45ms</div>
-                                <div class="metric-bar">
-                                    <div class="metric-fill" style="width: 100%"></div>
-                                </div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-header">
-                                    <span class="metric-name">Actix Web</span>
-                                </div>
-                                <div class="metric-value">52ms</div>
-                                <div class="metric-bar">
-                                    <div class="metric-fill" style="width: 87%"></div>
-                                </div>
-                            </div>
-                            <div class="metric-item">
-                                <div class="metric-header">
-                                    <span class="metric-name">Rocket</span>
-                                </div>
-                                <div class="metric-value">78ms</div>
-                                <div class="metric-bar">
-                                    <div class="metric-fill" style="width: 58%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="benchmark-card">
-                        <h3>Memory Usage</h3>
-                        <div class="memory-chart">
-                            <canvas id="memory-chart"></canvas>
-                        </div>
-                        <div class="memory-stats">
-                            <div class="memory-stat">
-                                <span class="stat-label">Idle</span>
-                                <span class="stat-value">12MB</span>
-                            </div>
-                            <div class="memory-stat">
-                                <span class="stat-label">Under Load</span>
-                                <span class="stat-value">156MB</span>
-                            </div>
-                            <div class="memory-stat">
-                                <span class="stat-label">Peak</span>
-                                <span class="stat-value">234MB</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="benchmark-note">
-                    <i data-feather="info"></i>
-                    <p>Benchmarks performed on AWS c5.2xlarge instance with 8 vCPUs, 16GB RAM. Test scenario: REST API with database queries.</p>
-                </div>
-            </div>
-        </section>
 
         <!-- Feature Comparison -->
         <section class="comparison-section">
@@ -1048,7 +940,6 @@ router.post(<span class="string">"/users"</span>, create_user);
                         </div>
                         <h3>GitHub</h3>
                         <p>Report issues and contribute</p>
-                        <span class="community-stat">2.1k stars</span>
                     </a>
                     <a href="https://twitter.com/elifrs" class="community-card">
                         <div class="community-icon">
@@ -1094,10 +985,6 @@ router.post(<span class="string">"/users"</span>, create_user);
                     </div>
                     <div class="cta-stats">
                         <div class="cta-stat">
-                            <i data-feather="download"></i>
-                            <span>12,456 downloads</span>
-                        </div>
-                        <div class="cta-stat">
                             <i data-feather="package"></i>
                             <span>v0.5.2 stable</span>
                         </div>
@@ -1131,7 +1018,7 @@ router.post(<span class="string">"/users"</span>, create_user);
                         <a href="#features">Features</a>
                         <a href="#quickstart">Quick Start</a>
                         <a href="#examples">Examples</a>
-                        <a href="#performance">Performance</a>
+                        <a href="#roadmap">Roadmap</a>
                     </div>
                     <div class="footer-column">
                         <h4>Developers</h4>
@@ -1260,7 +1147,7 @@ router.post(<span class="string">"/users"</span>, create_user);
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .benchmark-card, .roadmap-card, .community-card').forEach(el => {
+        document.querySelectorAll('.feature-card, .roadmap-card, .community-card').forEach(el => {
             observer.observe(el);
         });
     </script>
