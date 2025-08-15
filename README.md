@@ -13,6 +13,9 @@ This repository contains the official landing page for elif.rs, an LLM-friendly 
 - 🚀 Lightweight, no JavaScript dependencies
 - 🔗 Direct links to GitHub repository and documentation
 - 📊 Real-time development progress tracking
+- 💻 Framework examples with syntax highlighting
+- 🏗️ Pure framework API demonstrations
+- 🎯 Controller and ORM pattern examples
 
 ## Development
 
