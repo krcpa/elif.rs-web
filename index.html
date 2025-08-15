@@ -443,6 +443,46 @@ app.start().<span class="keyword">await</span>?;</code></pre>
     .get_raw(&pool).<span class="keyword">await</span>?;</code></pre>
                     </div>
                 </div>
+
+                <div class="example-section" style="margin-top:1.5rem">
+                    <h3>UserController: active users</h3>
+                    <div class="code-example full">
+                        <pre><code><span class="keyword">pub</span> <span class="keyword">async fn</span> <span class="function">active_users</span>(
+    &amp;<span class="keyword">self</span>,
+    <span class="type">State</span>(container): <span class="type">State</span>&lt;<span class="type">Arc</span>&lt;<span class="type">Container</span>&gt;&gt;,
+    <span class="type">Query</span>(params): <span class="type">Query</span>&lt;<span class="type">PaginationParams</span>&gt;,
+) -&gt; <span class="type">HttpResult</span>&lt;<span class="type">Response</span>&gt; {
+    <span class="keyword">let</span> pool = <span class="keyword">self</span>.get_pool(&amp;container).<span class="keyword">await</span>?;
+    <span class="keyword">let</span> users = <span class="type">User</span>::query()
+        .select(<span class="string">"*"</span>)
+        .where_clause(<span class="string">"is_active = $1"</span>)
+        .order_by(<span class="string">"created_at DESC"</span>)
+        .limit(params.per_page.unwrap_or(20) <span class="keyword">as</span> <span class="type">i32</span>)
+        .execute(&amp;pool)
+        .<span class="keyword">await</span>
+        .map_err(|e| <span class="type">HttpError</span>::database_error(&amp;e.to_string()))?;
+
+    <span class="keyword">let</span> api_response = <span class="type">ApiResponse</span>::success(users);
+    <span class="keyword">Ok</span>((&nbsp;<span class="type">StatusCode</span>::OK, <span class="type">Json</span>(api_response)&nbsp;).into_response())
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="example-section" style="margin-top:1.5rem">
+                    <h3>Controller routes wiring</h3>
+                    <div class="code-example full">
+                        <pre><code><span class="keyword">pub fn</span> <span class="function">setup_user_routes</span>(
+    router: <span class="namespace">axum</span>::<span class="type">Router</span>&lt;<span class="type">Arc</span>&lt;<span class="type">Container</span>&gt;&gt;
+) -&gt; <span class="namespace">axum</span>::<span class="type">Router</span>&lt;<span class="type">Arc</span>&lt;<span class="type">Container</span>&gt;&gt; {
+    <span class="keyword">let</span> user_controller = <span class="type">Arc</span>::new(<span class="type">UserController</span>::new());
+
+    router
+        .route(<span class="string">"/users"</span>, <span class="namespace">axum</span>::routing::get({ /* controller.index */ }))
+        .route(<span class="string">"/users"</span>, <span class="namespace">axum</span>::routing::post({ /* controller.create */ }))
+        .route(<span class="string">"/users/active"</span>, <span class="namespace">axum</span>::routing::get({ /* controller.active_users */ }))
+}</code></pre>
+                    </div>
+                </div>
             </div>
         </section>
 
