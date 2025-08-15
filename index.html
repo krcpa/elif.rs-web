@@ -21,7 +21,7 @@
                 <a href="#architecture">Architecture</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#quickstart">Quick Start</a>
-                <a href="https://docs.rs/elif-core" class="nav-docs">Docs</a>
+                <a href="https://docs.rs/elifrs" class="nav-docs">Docs</a>
                 <a href="https://github.com/krcpa/elif.rs" class="github-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -45,7 +45,7 @@
                         <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
                     </svg>
                 </div>
-                <span>PHASE 2: WEB FOUNDATION</span>
+                <span>PHASE 3: SECURITY</span>
             </div>
             
             <h1 class="hero-title">
@@ -64,6 +64,7 @@
                 <div class="code-tabs">
                     <button class="code-tab active" data-tab="install">Install</button>
                     <button class="code-tab" data-tab="usage">Usage</button>
+                    <button class="code-tab" data-tab="http">HTTP</button>
                 </div>
                 <pre class="code-content" data-content="install"><code><span class="comment"># Install the CLI globally</span>
 <span class="keyword">cargo</span> install elifrs
@@ -78,6 +79,13 @@
     .build()?;
 
 app.start().<span class="keyword">await</span>?;</code></pre>
+                <pre class="code-content hidden" data-content="http"><code><span class="comment">// Basic Axum example</span>
+<span class="keyword">use</span> <span class="namespace">axum</span>::{routing::get, Router};
+
+<span class="keyword">async fn</span> <span class="function">hello</span>() -&gt; &amp;<span class="type">'static str</span> { <span class="string">"Hello from elif.rs!"</span> }
+
+<span class="keyword">let</span> app = Router::new()
+    .route(<span class="string">"/"</span>, get(hello));</code></pre>
             </div>
             
             <div class="hero-actions">
@@ -163,10 +171,10 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         <div class="arch-example">
                             <div class="example-label">Safe Zone Example:</div>
                             <div class="arch-code">
-                                <code><span class="comment">// <<<ELIF:BEGIN agent-editable>>></span>
+                                <code><span class="comment">// &lt;&lt;&lt;ELIF:BEGIN agent-editable&gt;&gt;&gt;</span>
 <span class="comment">// AI can modify this section</span>
 <span class="keyword">fn</span> <span class="function">handle_request</span>() { ... }
-<span class="comment">// <<<ELIF:END agent-editable>>></span></code>
+<span class="comment">// &lt;&lt;&lt;ELIF:END agent-editable&gt;&gt;&gt;</span></code>
                             </div>
                         </div>
                         <div class="arch-benefits">
@@ -266,30 +274,32 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         </div>
                     </div>
 
-                    <div class="phase-card active">
+                    <div class="phase-card completed">
                         <div class="phase-header">
                             <div class="phase-number">2</div>
-                            <div class="phase-status active">
-                                <div class="spinner-small"></div>
-                                <span>In Progress</span>
+                            <div class="phase-status">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                </svg>
+                                <span>Complete</span>
                             </div>
                         </div>
                         <h3>Web Foundation</h3>
                         <p>HTTP server, routing, middleware</p>
                         <div class="phase-features">
-                            <span>HTTP/2 Server</span>
+                            <span>HTTP Server (Axum)</span>
                             <span>Routing System</span>
-                            <span>ORM Integration</span>
+                            <span>Advanced ORM Completed</span>
                         </div>
                     </div>
 
-                    <div class="phase-card">
+                    <div class="phase-card active">
                         <div class="phase-header">
                             <div class="phase-number">3</div>
-                            <div class="phase-status">Planned</div>
+                            <div class="phase-status active"><div class="spinner-small"></div><span>In Progress</span></div>
                         </div>
                         <h3>Security & Validation</h3>
-                        <p>CORS, CSRF, input validation</p>
+                        <p>CORS (complete), CSRF (in progress), headers (planned)</p>
                     </div>
 
                     <div class="phase-card">
@@ -372,7 +382,7 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         <div class="step-content">
                             <h3>Create Your Project</h3>
                             <div class="code-block">
-                                <code>elifrs new my-api && cd my-api</code>
+                                <code>elifrs new my-api &amp;&amp; cd my-api</code>
                             </div>
                         </div>
                     </div>
@@ -417,6 +427,22 @@ app.start().<span class="keyword">await</span>?;</code></pre>
 }</code></pre>
                     </div>
                 </div>
+
+                <div class="example-section" style="margin-top:1.5rem">
+                    <h3>Advanced ORM Query</h3>
+                    <div class="code-example full">
+                        <pre><code><span class="keyword">let</span> <span class="function">user_stats</span> = User::query()
+    .select(<span class="string">"users.country"</span>)
+    .select_count(<span class="string">"*"</span>, <span class="type">Some</span>(<span class="string">"total_users"</span>))
+    .select_avg(<span class="string">"age"</span>, <span class="type">Some</span>(<span class="string">"avg_age"</span>))
+    .join(<span class="string">"profiles"</span>, <span class="string">"users.id"</span>, <span class="string">"profiles.user_id"</span>)
+    .where_not_null(<span class="string">"profiles.bio"</span>)
+    .group_by(<span class="string">"users.country"</span>)
+    .having_gt(<span class="string">"COUNT(*)"</span>, 100)
+    .order_by_desc(<span class="string">"avg_age"</span>)
+    .get_raw(&pool).<span class="keyword">await</span>?;</code></pre>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -429,7 +455,7 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         <div class="metric-detail">333x faster than target</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">69+</div>
+                        <div class="metric-value">135+</div>
                         <div class="metric-label">Tests Passing</div>
                         <div class="metric-detail">Comprehensive coverage</div>
                     </div>
@@ -465,7 +491,7 @@ app.start().<span class="keyword">await</span>?;</code></pre>
             </div>
         </section>
     </main>
-
+    
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -477,7 +503,7 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                     <h4>Resources</h4>
                     <a href="https://github.com/krcpa/elif.rs">GitHub</a>
                     <a href="https://crates.io/crates/elifrs">crates.io</a>
-                    <a href="https://docs.rs/elif-core">Documentation</a>
+                    <a href="https://docs.rs/elifrs">Documentation</a>
                 </div>
                 <div class="footer-column">
                     <h4>Community</h4>
