@@ -20,7 +20,7 @@
                     <span class="logo-icon">⚡</span>
                     <span class="logo-text">elif.rs</span>
                 </div>
-                <div class="nav-version">v0.5.2</div>
+                <div class="nav-version">v0.6.1</div>
             </div>
             <div class="nav-menu">
                 <div class="nav-item dropdown">
@@ -70,7 +70,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-icon">📦</span>
-                <span>v0.5.2 - Phase 4: Database Operations</span>
+                <span>v0.6.1 - Phase 6.1: Relationship System Core</span>
             </div>
             <h1 class="hero-title">
                 <span class="title-line">The <span class="gradient-text">AI-Native</span></span>
@@ -78,7 +78,7 @@
             </h1>
             <p class="hero-description">
                 Build production-ready web applications with an LLM-optimized architecture. 
-                Featuring dependency injection, advanced ORM, security middleware, and 155+ tests passing.
+                Featuring dependency injection, advanced ORM, security middleware, and 500+ tests passing.
             </p>
             <div class="hero-actions">
                 <a href="#quickstart" class="btn-primary btn-large">
@@ -768,12 +768,12 @@ router.post(<span class="string">"/users"</span>, create_user);
                 <div class="section-header">
                     <span class="section-badge">Development Progress</span>
                     <h2 class="section-title">Roadmap to 1.0</h2>
-                    <p class="section-subtitle">9-phase iterative development with working framework at each phase</p>
+                    <p class="section-subtitle">11-phase iterative development with working framework at each phase</p>
                 </div>
                 <div class="roadmap-timeline">
                     <div class="timeline-progress">
                         <div class="timeline-track">
-                            <div class="timeline-fill" style="width: 44%;"></div>
+                            <div class="timeline-fill" style="width: 55.5%;"></div>
                         </div>
                         <div class="timeline-markers">
                             <div class="timeline-marker completed" style="left: 0%;">
@@ -789,7 +789,7 @@ router.post(<span class="string">"/users"</span>, create_user);
                                 <div class="marker-content">
                                     <h4>Phase 2 ✅</h4>
                                     <p>Web Foundation</p>
-                                    <span class="marker-stats">61 tests</span>
+                                    <span class="marker-stats">112 tests</span>
                                 </div>
                             </div>
                             <div class="timeline-marker completed" style="left: 22%;">
@@ -797,7 +797,7 @@ router.post(<span class="string">"/users"</span>, create_user);
                                 <div class="marker-content">
                                     <h4>Phase 3 ✅</h4>
                                     <p>Security & Validation</p>
-                                    <span class="marker-stats">25 tests</span>
+                                    <span class="marker-stats">151 tests</span>
                                 </div>
                             </div>
                             <div class="timeline-marker completed" style="left: 33%;">
@@ -805,23 +805,23 @@ router.post(<span class="string">"/users"</span>, create_user);
                                 <div class="marker-content">
                                     <h4>Phase 4 ✅</h4>
                                     <p>Database Operations</p>
-                                    <span class="marker-stats">36 tests</span>
+                                    <span class="marker-stats">79 tests</span>
                                 </div>
                             </div>
-                            <div class="timeline-marker current" style="left: 44%;">
+                            <div class="timeline-marker completed" style="left: 44%;">
                                 <div class="marker-dot"></div>
                                 <div class="marker-content">
-                                    <h4>Phase 5 🚧</h4>
+                                    <h4>Phase 5 ✅</h4>
                                     <p>Authentication</p>
-                                    <span class="marker-eta">In Progress</span>
+                                    <span class="marker-stats">86 tests</span>
                                 </div>
                             </div>
-                            <div class="timeline-marker" style="left: 55%;">
+                            <div class="timeline-marker current" style="left: 55%;">
                                 <div class="marker-dot"></div>
                                 <div class="marker-content">
-                                    <h4>Phase 6</h4>
-                                    <p>Advanced ORM</p>
-                                    <span class="marker-eta">Q2 2025</span>
+                                    <h4>Phase 6.1 🚧</h4>
+                                    <p>Relationship System</p>
+                                    <span class="marker-eta">In Progress</span>
                                 </div>
                             </div>
                             <div class="timeline-marker" style="left: 66%;">
@@ -848,12 +848,28 @@ router.post(<span class="string">"/users"</span>, create_user);
                                     <span class="marker-eta">Q3 2025</span>
                                 </div>
                             </div>
+                            <div class="timeline-marker" style="left: 91%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-content">
+                                    <h4>Phase 10</h4>
+                                    <p>Laravel/NestJS Parity</p>
+                                    <span class="marker-eta">Q4 2025</span>
+                                </div>
+                            </div>
+                            <div class="timeline-marker" style="left: 95%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-content">
+                                    <h4>Phase 11</h4>
+                                    <p>Enterprise Features</p>
+                                    <span class="marker-eta">Q4 2025</span>
+                                </div>
+                            </div>
                             <div class="timeline-marker milestone" style="left: 100%;">
                                 <div class="marker-dot"></div>
                                 <div class="marker-content">
                                     <h4>1.0 Release</h4>
                                     <p>Production Ready</p>
-                                    <span class="marker-eta">Q4 2025</span>
+                                    <span class="marker-eta">2026</span>
                                 </div>
                             </div>
                         </div>
@@ -864,28 +880,28 @@ router.post(<span class="string">"/users"</span>, create_user);
                         <div class="roadmap-icon">
                             <i data-feather="lock"></i>
                         </div>
-                        <h3>Phase 5: Authentication & Authorization</h3>
-                        <p>JWT/OAuth2, RBAC, session management, password hashing</p>
+                        <h3>Phase 6.1: Relationship System Core</h3>
+                        <p>HasOne, HasMany, BelongsTo, BelongsToMany, polymorphic relationships</p>
                         <div class="roadmap-progress">
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 15%;"></div>
                             </div>
-                            <span>Starting Development</span>
+                            <span>Active Development</span>
                         </div>
                     </div>
                     <div class="roadmap-card">
                         <div class="roadmap-icon">
                             <i data-feather="git-branch"></i>
                         </div>
-                        <h3>Phase 6: Advanced ORM</h3>
-                        <p>Relationships, eager loading, query optimization, caching</p>
+                        <h3>Phase 6.2-6.6: Advanced ORM Features</h3>
+                        <p>Eager loading, lazy loading, events, advanced queries, full polymorphic support</p>
                     </div>
                     <div class="roadmap-card">
                         <div class="roadmap-icon">
                             <i data-feather="sparkles"></i>
                         </div>
-                        <h3>Phase 7-9: Production Features</h3>
-                        <p>WebSockets, GraphQL, monitoring, deployment tools</p>
+                        <h3>Phase 7-11: Advanced Features</h3>
+                        <p>Developer experience, production features, enterprise capabilities</p>
                     </div>
                 </div>
             </div>
@@ -947,7 +963,7 @@ router.post(<span class="string">"/users"</span>, create_user);
                     <div class="cta-stats">
                         <div class="cta-stat">
                             <i data-feather="package"></i>
-                            <span>v0.5.2 stable</span>
+                            <span>v0.6.1 experimental</span>
                         </div>
                         <div class="cta-stat">
                             <i data-feather="users"></i>
