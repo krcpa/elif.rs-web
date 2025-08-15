@@ -45,7 +45,7 @@
                         <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
                     </svg>
                 </div>
-                <span>PHASE 3: SECURITY</span>
+                <span>PHASE 3: SECURITY COMPLETE</span>
             </div>
             
             <h1 class="hero-title">
@@ -57,7 +57,7 @@
             <p class="hero-description">
                 elif.rs enables both human developers and AI agents to build production-ready web applications 
                 through <strong>spec-driven architecture</strong>, <strong>safe code generation</strong>, and 
-                <strong>LLM-optimized APIs</strong>.
+                <strong>LLM-optimized APIs</strong>. Security foundation now includes <strong>CORS</strong> and <strong>CSRF</strong>.
             </p>
             
             <div class="hero-code-preview">
@@ -71,7 +71,7 @@
 
 <span class="comment"># Create a new project</span>
 <span class="keyword">elifrs</span> new my-app
-<span class="keyword">cd</span> my-app && <span class="keyword">cargo</span> run</code></pre>
+<span class="keyword">cd</span> my-app &amp;&amp; <span class="keyword">cargo</span> run</code></pre>
                 <pre class="code-content hidden" data-content="usage"><code><span class="keyword">let</span> app = Application::builder()
     .provider(DatabaseProvider)
     .provider(AuthProvider)
@@ -293,13 +293,18 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         </div>
                     </div>
 
-                    <div class="phase-card active">
+                    <div class="phase-card completed">
                         <div class="phase-header">
                             <div class="phase-number">3</div>
-                            <div class="phase-status active"><div class="spinner-small"></div><span>In Progress</span></div>
+                            <div class="phase-status">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                </svg>
+                                <span>Complete</span>
+                            </div>
                         </div>
-                        <h3>Security & Validation</h3>
-                        <p>CORS (complete), CSRF (in progress), headers (planned)</p>
+                        <h3>Security & Architecture</h3>
+                        <p>CORS + CSRF protection; unified security builder; framework-native middleware</p>
                     </div>
 
                     <div class="phase-card">
@@ -483,6 +488,24 @@ app.start().<span class="keyword">await</span>?;</code></pre>
 }</code></pre>
                     </div>
                 </div>
+
+                <div class="example-section" style="margin-top:1.5rem">
+                    <h3>Security middleware (CORS + CSRF)</h3>
+                    <div class="code-example full">
+                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_security</span>::*;
+
+<span class="comment">// Configure CORS and CSRF protection</span>
+<span class="keyword">let</span> security = <span class="type">SecurityMiddlewareBuilder</span>::new()
+    .cors(<span class="type">CorsConfig</span>::default())
+    .csrf(<span class="type">CsrfConfig</span>::default())
+    .build();
+
+<span class="comment">// Apply to your axum router</span>
+<span class="keyword">let</span> app = <span class="namespace">axum</span>::Router::new()
+    .route(<span class="string">"/api/data"</span>, <span class="namespace">axum</span>::routing::get(get_data))
+    .layer(security);</code></pre>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -495,9 +518,9 @@ app.start().<span class="keyword">await</span>?;</code></pre>
                         <div class="metric-detail">333x faster than target</div>
                     </div>
                     <div class="metric">
-                        <div class="metric-value">135+</div>
+                        <div class="metric-value">155+</div>
                         <div class="metric-label">Tests Passing</div>
-                        <div class="metric-detail">Comprehensive coverage</div>
+                        <div class="metric-detail">Core 33 • HTTP 61 • ORM 36 • Security 25</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">0.2.0</div>
