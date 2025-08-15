@@ -18,14 +18,9 @@
                 <div class="nav-version">v0.2.0</div>
             </div>
             <div class="nav-links">
-                <a href="#architecture">Architecture</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#quickstart">Quick Start</a>
                 <a href="https://docs.rs/elifrs" class="nav-docs">Docs</a>
                 <a href="https://github.com/krcpa/elif.rs" class="github-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     <span class="github-stars">Star</span>
                 </a>
             </div>
@@ -33,57 +28,60 @@
     </nav>
 
     <header class="hero-section">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-            <div class="hero-pattern"></div>
-        </div>
-        
         <div class="hero-content">
-            <div class="hero-badge">
-                <div class="badge-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                    </svg>
-                </div>
-                <span>PHASE 3: SECURITY COMPLETE</span>
-            </div>
-            
             <h1 class="hero-title">
-                <span class="title-prefix">Building the</span>
-                <span class="title-main">AI-First Web Framework</span>
-                <span class="title-suffix">for Rust developers and LLM agents</span>
+                <span class="title-prefix">AI‑First</span>
+                <span class="title-main">Rust Web Framework</span>
+                <span class="title-suffix">for developers and AI agents</span>
             </h1>
-            
             <p class="hero-description">
-                elif.rs enables both human developers and AI agents to build production-ready web applications 
-                through <strong>spec-driven architecture</strong>, <strong>safe code generation</strong>, and 
-                <strong>LLM-optimized APIs</strong>. Security foundation now includes <strong>CORS</strong> and <strong>CSRF</strong>.
+                Build secure web APIs with a clean architecture, advanced ORM, and safety features designed for AI‑assisted development.
             </p>
-            
-            <div class="hero-code-preview">
-                <div class="code-tabs">
-                    <button class="code-tab active" data-tab="install">Install</button>
-                    <button class="code-tab" data-tab="usage">Usage</button>
-                    <button class="code-tab" data-tab="http">HTTP</button>
+            <div class="hero-actions">
+                <a href="#quickstart" class="btn-primary">Get Started</a>
+                <a href="https://github.com/krcpa/elif.rs" class="btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="quickstart" class="quickstart-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Quick Start</h2>
+                    <p class="section-subtitle">Install, create, run</p>
                 </div>
-                <pre class="code-content" data-content="install"><code><span class="comment"># Install the CLI globally</span>
-<span class="keyword">cargo</span> install elifrs
+                <div class="quickstart-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install CLI</h3>
+                            <div class="code-block"><code>cargo install elifrs</code></div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Create App</h3>
+                            <div class="code-block"><code>elifrs new my-app &amp;&amp; cd my-app</code></div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Run</h3>
+                            <div class="code-block"><code>cargo run</code></div>
+                        </div>
+                    </div>
+                </div>
 
-<span class="comment"># Create a new project</span>
-<span class="keyword">elifrs</span> new my-app
-<span class="keyword">cd</span> my-app &amp;&amp; <span class="keyword">cargo</span> run</code></pre>
-                <pre class="code-content hidden" data-content="usage"><code><span class="keyword">let</span> app = Application::builder()
-    .provider(DatabaseProvider)
-    .provider(AuthProvider)
-    .module(ApiModule)
-    .build()?;
-
-app.start().<span class="keyword">await</span>?;</code></pre>
-                <pre class="code-content hidden" data-content="http"><code><span class="comment">// Framework-native HTTP server</span>
-<span class="keyword">use</span> <span class="namespace">elif_http</span>::*;
+                <div class="example-section">
+                    <h3>Minimal server</h3>
+                    <div class="code-example full">
+                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_http</span>::*;
 
 <span class="keyword">async fn</span> <span class="function">hello</span>() -&gt; <span class="type">Response</span> {
-    <span class="type">Response</span>::text(<span class="string">"Hello from elif.rs!"</span>)
+    <span class="type">Response</span>::text(<span class="string">"Hello"</span>)
 }
 
 <span class="keyword">let</span> server = <span class="type">HttpServer</span>::new(container)
@@ -92,519 +90,30 @@ app.start().<span class="keyword">await</span>?;</code></pre>
     .<span class="keyword">await</span>?;
 
 server.serve().<span class="keyword">await</span>?;</code></pre>
-            </div>
-            
-            <div class="hero-actions">
-                <a href="#quickstart" class="btn-primary">
-                    Get Started
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/krcpa/elif.rs" class="btn-secondary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    View on GitHub
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="architecture" class="architecture-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <h2 class="section-title">Built for the AI Era</h2>
-                    <p class="section-subtitle">Every architectural decision optimized for both human developers and AI agents</p>
-                </div>
-                
-                <div class="architecture-grid">
-                    <div class="arch-feature">
-                        <div class="arch-header">
-                            <div class="arch-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <h3>Spec-First Development</h3>
-                        </div>
-                        <p class="arch-description">
-                            Define your API with specifications. Let AI agents 
-                            generate the implementation within safe boundaries.
-                        </p>
-                        <div class="arch-example">
-                            <div class="example-label">Example Usage:</div>
-                            <div class="arch-code">
-                                <code>elifrs generate --from-spec api.yaml</code>
-                            </div>
-                        </div>
-                        <div class="arch-benefits">
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Consistent API design</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Auto-generated boilerplate</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Type-safe implementations</span>
-                            </div>
-                        </div>
                     </div>
-                    
-                    <div class="arch-feature">
-                        <div class="arch-header">
-                            <div class="arch-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <h3>MARKER-Based Safety</h3>
-                        </div>
-                        <p class="arch-description">
-                            AI agents can only modify code within designated 
-                            MARKER zones, protecting your core logic.
-                        </p>
-                        <div class="arch-example">
-                            <div class="example-label">Safe Zone Example:</div>
-                            <div class="arch-code">
-                                <code><span class="comment">// &lt;&lt;&lt;ELIF:BEGIN agent-editable&gt;&gt;&gt;</span>
-<span class="comment">// AI can modify this section</span>
-<span class="keyword">fn</span> <span class="function">handle_request</span>() { ... }
-<span class="comment">// &lt;&lt;&lt;ELIF:END agent-editable&gt;&gt;&gt;</span></code>
-                            </div>
-                        </div>
-                        <div class="arch-benefits">
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Protected core logic</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Controlled AI modifications</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Safe code generation</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="arch-feature">
-                        <div class="arch-header">
-                            <div class="arch-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-                                </svg>
-                            </div>
-                            <h3>Dependency Injection</h3>
-                        </div>
-                        <p class="arch-description">
-                            Service-oriented architecture with compile-time 
-                            safety and automatic dependency resolution.
-                        </p>
-                        <div class="arch-example">
-                            <div class="example-label">DI Container Example:</div>
-                            <div class="arch-code">
-                                <code>Application::builder()
-    .provider(DatabaseProvider)
-    .provider(AuthProvider)
-    .build()</code>
-                            </div>
-                        </div>
-                        <div class="arch-benefits">
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Automatic wiring</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Compile-time safety</span>
-                            </div>
-                            <div class="benefit">
-                                <svg class="benefit-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Testable architecture</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="roadmap" class="roadmap-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <h2 class="section-title">Production-Ready Development Roadmap</h2>
-                    <p class="section-subtitle">9 phases to build a Laravel-like experience in Rust</p>
-                </div>
-                
-                <div class="phase-grid">
-                    <div class="phase-card completed">
-                        <div class="phase-header">
-                            <div class="phase-number">1</div>
-                            <div class="phase-status">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-                        <h3>Architecture Foundation</h3>
-                        <p>DI container, modules, configuration</p>
-                        <div class="phase-features">
-                            <span>✓ Dependency Injection</span>
-                            <span>✓ Module System</span>
-                            <span>✓ 33 Tests Passing</span>
-                        </div>
-                    </div>
-
-                    <div class="phase-card completed">
-                        <div class="phase-header">
-                            <div class="phase-number">2</div>
-                            <div class="phase-status">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-                        <h3>Web Foundation</h3>
-                        <p>HTTP server, routing, middleware</p>
-                        <div class="phase-features">
-                            <span>HTTP Server (Axum)</span>
-                            <span>Routing System</span>
-                            <span>Advanced ORM Completed</span>
-                        </div>
-                    </div>
-
-                    <div class="phase-card completed">
-                        <div class="phase-header">
-                            <div class="phase-number">3</div>
-                            <div class="phase-status">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                </svg>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-                        <h3>Security & Architecture</h3>
-                        <p>CORS + CSRF protection; unified security builder; framework-native middleware</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">4</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Database Operations</h3>
-                        <p>Transactions, migrations, pooling</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">5</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Authentication</h3>
-                        <p>JWT, sessions, authorization</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">6</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Advanced ORM</h3>
-                        <p>Relationships, eager loading</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">7</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Developer Experience</h3>
-                        <p>CLI tools, testing, docs</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">8</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Production Features</h3>
-                        <p>Caching, queues, monitoring</p>
-                    </div>
-
-                    <div class="phase-card">
-                        <div class="phase-header">
-                            <div class="phase-number">9</div>
-                            <div class="phase-status">Planned</div>
-                        </div>
-                        <h3>Advanced Features</h3>
-                        <p>WebSockets, file handling, email</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="quickstart" class="quickstart-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <h2 class="section-title">Get Started in Minutes</h2>
-                    <p class="section-subtitle">From zero to running web application</p>
-                </div>
-                
-                <div class="quickstart-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Install the CLI</h3>
-                            <div class="code-block">
-                                <code>cargo install elifrs</code>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Create Your Project</h3>
-                            <div class="code-block">
-                                <code>elifrs new my-api &amp;&amp; cd my-api</code>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Run Your Application</h3>
-                            <div class="code-block">
-                                <code>cargo run</code>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="example-section">
-                    <h3>Build a REST API</h3>
-                    <div class="code-example full">
-                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_core</span>::*;
-<span class="keyword">use</span> <span class="namespace">elif_orm</span>::*;
-
-<span class="attribute">#[derive(Model, Serialize, Deserialize)]</span>
-<span class="keyword">struct</span> <span class="type">User</span> {
-    id: <span class="type">Option</span>&lt;<span class="type">Uuid</span>&gt;,
-    email: <span class="type">String</span>,
-    name: <span class="type">String</span>,
-}
-
-<span class="keyword">async fn</span> <span class="function">create_user</span>(req: Request) -> Response {
-    <span class="keyword">let</span> user_data: CreateUserRequest = req.json()?;
-    <span class="keyword">let</span> user = User::create(req.db(), user_data).<span class="keyword">await</span>?;
-    Response::json(user).status(201)
-}
-
-<span class="keyword">fn</span> <span class="function">main</span>() {
-    <span class="keyword">let</span> app = Application::builder()
-        .provider(DatabaseProvider)
-        .route(<span class="string">"POST /users"</span>, create_user)
-        .build()?;
-        
-    app.start().<span class="keyword">await</span>?;
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="example-section" style="margin-top:1.5rem">
-                    <h3>Advanced ORM Query</h3>
-                    <div class="code-example full">
-                        <pre><code><span class="keyword">let</span> <span class="function">user_stats</span> = User::query()
-    .select(<span class="string">"users.country"</span>)
-    .select_count(<span class="string">"*"</span>, <span class="type">Some</span>(<span class="string">"total_users"</span>))
-    .select_avg(<span class="string">"age"</span>, <span class="type">Some</span>(<span class="string">"avg_age"</span>))
-    .join(<span class="string">"profiles"</span>, <span class="string">"users.id"</span>, <span class="string">"profiles.user_id"</span>)
-    .where_not_null(<span class="string">"profiles.bio"</span>)
-    .group_by(<span class="string">"users.country"</span>)
-    .having_gt(<span class="string">"COUNT(*)"</span>, 100)
-    .order_by_desc(<span class="string">"avg_age"</span>)
-    .get_raw(&pool).<span class="keyword">await</span>?;</code></pre>
-                    </div>
-                </div>
-
-                <div class="example-section" style="margin-top:1.5rem">
-                    <h3>UserController: active users</h3>
-                    <div class="code-example full">
-                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_http</span>::{Request, Response};
-
-<span class="keyword">pub</span> <span class="keyword">async fn</span> <span class="function">active_users</span>(
-    &amp;<span class="keyword">self</span>,
-    request: <span class="type">Request</span>,
-) -&gt; <span class="type">Response</span> {
-    <span class="keyword">let</span> per_page = request.query().get(<span class="string">"per_page"</span>)
-        .and_then(|v| v.parse().ok()).unwrap_or(20);
-
-    <span class="keyword">let</span> users = <span class="type">User</span>::query()
-        .select(<span class="string">"*"</span>)
-        .where_clause(<span class="string">"is_active = $1"</span>)
-        .order_by(<span class="string">"created_at DESC"</span>)
-        .limit(per_page)
-        .execute(request.db())
-        .<span class="keyword">await</span>?;
-
-    <span class="type">Response</span>::json(<span class="type">ApiResponse</span>::success(users))
-        .with_status(200)
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="example-section" style="margin-top:1.5rem">
-                    <h3>Controller routes wiring</h3>
-                    <div class="code-example full">
-                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_http</span>::*;
-
-<span class="keyword">pub fn</span> <span class="function">setup_routes</span>() -&gt; <span class="type">Router</span> {
-    <span class="type">Router</span>::new()
-        .controller(<span class="string">"/users"</span>, <span class="type">UserController</span>::new())
-}</code></pre>
-                    </div>
-                </div>
-
-                <div class="example-section" style="margin-top:1.5rem">
-                    <h3>Security middleware (CORS + CSRF)</h3>
-                    <div class="code-example full">
-                        <pre><code><span class="keyword">use</span> <span class="namespace">elif_security</span>::*;
-
-<span class="comment">// Configure CORS and CSRF protection</span>
-<span class="keyword">let</span> security = <span class="type">SecurityMiddlewareBuilder</span>::new()
-    .cors(<span class="type">CorsConfig</span>::default())
-    .csrf(<span class="type">CsrfConfig</span>::default())
-    .build();
-
-<span class="comment">// Apply to your axum router</span>
-<span class="keyword">let</span> app = <span class="namespace">axum</span>::Router::new()
-    .route(<span class="string">"/api/data"</span>, <span class="namespace">axum</span>::routing::get(get_data))
-    .layer(security);</code></pre>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="metrics-section">
-            <div class="section-container">
-                <div class="metrics-grid">
-                    <div class="metric">
-                        <div class="metric-value">3μs</div>
-                        <div class="metric-label">Query Building</div>
-                        <div class="metric-detail">333x faster than target</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">155+</div>
-                        <div class="metric-label">Tests Passing</div>
-                        <div class="metric-detail">Core 33 • HTTP 61 • ORM 36 • Security 25</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">0.2.0</div>
-                        <div class="metric-label">Current Version</div>
-                        <div class="metric-detail">Available on crates.io</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">100%</div>
-                        <div class="metric-label">AI-Optimized</div>
-                        <div class="metric-detail">LLM-friendly APIs</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="cta-container">
-                <h2>Join the AI-First Revolution</h2>
-                <p>Be part of the community building the future of web development</p>
-                <div class="cta-actions">
-                    <a href="https://github.com/krcpa/elif.rs" class="btn-cta">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        Star on GitHub
-                    </a>
-                    <a href="https://crates.io/crates/elifrs" class="btn-cta-secondary">
-                        View on crates.io
-                    </a>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="footer-logo">elif.rs</div>
-                <p class="footer-tagline">The AI-First Rust Web Framework</p>
+                <p class="footer-tagline">MIT License</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h4>Resources</h4>
+                    <h4>Links</h4>
                     <a href="https://github.com/krcpa/elif.rs">GitHub</a>
                     <a href="https://crates.io/crates/elifrs">crates.io</a>
                     <a href="https://docs.rs/elifrs">Documentation</a>
                 </div>
-                <div class="footer-column">
-                    <h4>Community</h4>
-                    <a href="https://github.com/krcpa/elif.rs/discussions">Discussions</a>
-                    <a href="https://github.com/krcpa/elif.rs/issues">Issues</a>
-                    <a href="https://github.com/krcpa/elif.rs/blob/main/CONTRIBUTING.md">Contributing</a>
-                </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 elif.rs - MIT License</p>
+                <p>© 2025 elif.rs</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Tab switching functionality
-        document.querySelectorAll('.code-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.getAttribute('data-tab');
-                
-                // Update active tab
-                document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Show corresponding content
-                document.querySelectorAll('.code-content').forEach(content => {
-                    if (content.getAttribute('data-content') === targetTab) {
-                        content.classList.remove('hidden');
-                    } else {
-                        content.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
