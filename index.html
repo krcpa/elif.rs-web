@@ -141,71 +141,8 @@
                             </button>
                         </div>
                     </div>
-                    <div class="code-preview-content">
-                        <div class="code-line">
-                            <span class="line-number">1</span>
-                            <span class="code"><span class="keyword">use</span> <span class="module">elif_core</span>::<span class="type">Application</span>;</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">2</span>
-                            <span class="code"><span class="keyword">use</span> <span class="module">elif_http</span>::<span class="type">Router</span>;</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">3</span>
-                            <span class="code"></span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">4</span>
-                            <span class="code"><span class="attribute">#[tokio::main]</span></span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">5</span>
-                            <span class="code"><span class="keyword">async fn</span> <span class="function">main</span>() <span class="keyword">-></span> <span class="type">Result</span><()> {</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">6</span>
-                            <span class="code">    <span class="keyword">let</span> app <span class="keyword">=</span> <span class="type">Application</span>::builder()</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">7</span>
-                            <span class="code">        .provider(<span class="type">DatabaseProvider</span>)</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">8</span>
-                            <span class="code">        .module(<span class="type">UserModule</span>)</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">9</span>
-                            <span class="code">        .build().<span class="keyword">await</span>?;</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">10</span>
-                            <span class="code"></span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">11</span>
-                            <span class="code">    <span class="keyword">let</span> router <span class="keyword">=</span> <span class="type">Router</span>::new()</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">12</span>
-                            <span class="code">        .get(<span class="string">"/users"</span>, list_users)</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">13</span>
-                            <span class="code">        .post(<span class="string">"/users"</span>, create_user);</span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">14</span>
-                            <span class="code"></span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">15</span>
-                            <span class="code">    app.serve(router).<span class="keyword">await</span></span>
-                        </div>
-                        <div class="code-line">
-                            <span class="line-number">16</span>
-                            <span class="code">}</span>
-                        </div>
+                    <div class="code-preview-content" id="code-content">
+                        <!-- Content will be dynamically inserted by JavaScript -->
                     </div>
                 </div>
                 
@@ -738,6 +675,258 @@
                         this.querySelector('span').textContent = originalText;
                     }, 2000);
                 });
+            });
+        });
+
+        // Code content for each tab
+        const codeContents = {
+            'main.rs': `<div class="code-line">
+    <span class="line-number">1</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">elif_core</span>::<span class="type">Application</span>;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">2</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">elif_http</span>::<span class="type">Router</span>;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">3</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">4</span>
+    <span class="code"><span class="attribute">#[tokio::main]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">5</span>
+    <span class="code"><span class="keyword">async fn</span> <span class="function">main</span>() <span class="keyword">-></span> <span class="type">Result</span>&lt;()&gt; {</span>
+</div>
+<div class="code-line">
+    <span class="line-number">6</span>
+    <span class="code">    <span class="keyword">let</span> app <span class="keyword">=</span> <span class="type">Application</span>::builder()</span>
+</div>
+<div class="code-line">
+    <span class="line-number">7</span>
+    <span class="code">        .provider(<span class="type">DatabaseProvider</span>)</span>
+</div>
+<div class="code-line">
+    <span class="line-number">8</span>
+    <span class="code">        .provider(<span class="type">CacheProvider</span>)</span>
+</div>
+<div class="code-line">
+    <span class="line-number">9</span>
+    <span class="code">        .module(<span class="type">UserModule</span>)</span>
+</div>
+<div class="code-line">
+    <span class="line-number">10</span>
+    <span class="code">        .build().<span class="keyword">await</span>?;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">11</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">12</span>
+    <span class="code">    <span class="keyword">let</span> router <span class="keyword">=</span> <span class="type">Router</span>::new()</span>
+</div>
+<div class="code-line">
+    <span class="line-number">13</span>
+    <span class="code">        .get(<span class="string">"/api/users"</span>, list_users)</span>
+</div>
+<div class="code-line">
+    <span class="line-number">14</span>
+    <span class="code">        .post(<span class="string">"/api/users"</span>, create_user)</span>
+</div>
+<div class="code-line">
+    <span class="line-number">15</span>
+    <span class="code">        .middleware(<span class="type">AuthMiddleware</span>);</span>
+</div>
+<div class="code-line">
+    <span class="line-number">16</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">17</span>
+    <span class="code">    app.serve(router).<span class="keyword">await</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">18</span>
+    <span class="code">}</span>
+</div>`,
+            'models.rs': `<div class="code-line">
+    <span class="line-number">1</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">elif_orm</span>::{<span class="type">Entity</span>, <span class="type">Column</span>, <span class="type">Relation</span>};</span>
+</div>
+<div class="code-line">
+    <span class="line-number">2</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">chrono</span>::{<span class="type">DateTime</span>, <span class="type">Utc</span>};</span>
+</div>
+<div class="code-line">
+    <span class="line-number">3</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">uuid</span>::<span class="type">Uuid</span>;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">4</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">5</span>
+    <span class="code"><span class="attribute">#[derive(Entity, Debug)]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">6</span>
+    <span class="code"><span class="attribute">#[table(name = "users")]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">7</span>
+    <span class="code"><span class="keyword">pub struct</span> <span class="type">User</span> {</span>
+</div>
+<div class="code-line">
+    <span class="line-number">8</span>
+    <span class="code">    <span class="attribute">#[column(primary_key)]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">9</span>
+    <span class="code">    <span class="keyword">pub</span> id: <span class="type">Uuid</span>,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">10</span>
+    <span class="code">    </span>
+</div>
+<div class="code-line">
+    <span class="line-number">11</span>
+    <span class="code">    <span class="attribute">#[column(unique, indexed)]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">12</span>
+    <span class="code">    <span class="keyword">pub</span> email: <span class="type">String</span>,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">13</span>
+    <span class="code">    </span>
+</div>
+<div class="code-line">
+    <span class="line-number">14</span>
+    <span class="code">    <span class="attribute">#[column(nullable)]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">15</span>
+    <span class="code">    <span class="keyword">pub</span> name: <span class="type">Option</span>&lt;<span class="type">String</span>&gt;,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">16</span>
+    <span class="code">    </span>
+</div>
+<div class="code-line">
+    <span class="line-number">17</span>
+    <span class="code">    <span class="attribute">#[column(created_at)]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">18</span>
+    <span class="code">    <span class="keyword">pub</span> created_at: <span class="type">DateTime</span>&lt;<span class="type">Utc</span>&gt;,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">19</span>
+    <span class="code">}</span>
+</div>`,
+            'routes.rs': `<div class="code-line">
+    <span class="line-number">1</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">elif_http</span>::{<span class="type">Request</span>, <span class="type">Response</span>, <span class="type">Json</span>};</span>
+</div>
+<div class="code-line">
+    <span class="line-number">2</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">elif_core</span>::{<span class="type">inject</span>, <span class="type">Injectable</span>};</span>
+</div>
+<div class="code-line">
+    <span class="line-number">3</span>
+    <span class="code"><span class="keyword">use</span> <span class="module">crate</span>::{<span class="type">UserService</span>, <span class="type">CreateUserDto</span>};</span>
+</div>
+<div class="code-line">
+    <span class="line-number">4</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">5</span>
+    <span class="code"><span class="attribute">#[inject]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">6</span>
+    <span class="code"><span class="keyword">pub async fn</span> <span class="function">list_users</span>(</span>
+</div>
+<div class="code-line">
+    <span class="line-number">7</span>
+    <span class="code">    service: <span class="type">Injectable</span>&lt;<span class="type">UserService</span>&gt;,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">8</span>
+    <span class="code">) <span class="keyword">-></span> <span class="type">Response</span>&lt;<span class="type">Json</span>&gt; {</span>
+</div>
+<div class="code-line">
+    <span class="line-number">9</span>
+    <span class="code">    <span class="keyword">let</span> users <span class="keyword">=</span> service.find_all().<span class="keyword">await</span>?;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">10</span>
+    <span class="code">    <span class="type">Response</span>::ok(<span class="type">Json</span>(users))</span>
+</div>
+<div class="code-line">
+    <span class="line-number">11</span>
+    <span class="code">}</span>
+</div>
+<div class="code-line">
+    <span class="line-number">12</span>
+    <span class="code"></span>
+</div>
+<div class="code-line">
+    <span class="line-number">13</span>
+    <span class="code"><span class="attribute">#[inject]</span></span>
+</div>
+<div class="code-line">
+    <span class="line-number">14</span>
+    <span class="code"><span class="keyword">pub async fn</span> <span class="function">create_user</span>(</span>
+</div>
+<div class="code-line">
+    <span class="line-number">15</span>
+    <span class="code">    service: <span class="type">Injectable</span>&lt;<span class="type">UserService</span>&gt;,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">16</span>
+    <span class="code">    <span class="type">Json</span>(dto): <span class="type">Json</span>&lt;<span class="type">CreateUserDto</span>&gt;,</span>
+</div>
+<div class="code-line">
+    <span class="line-number">17</span>
+    <span class="code">) <span class="keyword">-></span> <span class="type">Response</span>&lt;<span class="type">Json</span>&gt; {</span>
+</div>
+<div class="code-line">
+    <span class="line-number">18</span>
+    <span class="code">    <span class="keyword">let</span> user <span class="keyword">=</span> service.create(dto).<span class="keyword">await</span>?;</span>
+</div>
+<div class="code-line">
+    <span class="line-number">19</span>
+    <span class="code">    <span class="type">Response</span>::created(<span class="type">Json</span>(user))</span>
+</div>
+<div class="code-line">
+    <span class="line-number">20</span>
+    <span class="code">}</span>
+</div>`
+        };
+
+        // Initialize with main.rs content
+        document.getElementById('code-content').innerHTML = codeContents['main.rs'];
+
+        // Tab functionality for code preview
+        document.querySelectorAll('.code-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // Update code content
+                const tabName = this.textContent;
+                const codeContent = document.getElementById('code-content');
+                if (codeContents[tabName]) {
+                    codeContent.innerHTML = codeContents[tabName];
+                }
             });
         });
     </script>

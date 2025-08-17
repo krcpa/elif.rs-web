@@ -472,6 +472,12 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: var(--transition-fast);
+    user-select: none;
+}
+
+.code-tab:hover {
+    background: var(--color-surface);
+    color: var(--color-text);
 }
 
 .code-tab.active {
