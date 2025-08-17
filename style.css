@@ -151,6 +151,41 @@ body {
     color: var(--color-text);
 }
 
+.nav-link.disabled {
+    color: var(--color-text-tertiary);
+    cursor: not-allowed;
+    position: relative;
+}
+
+.nav-link.disabled:hover {
+    color: var(--color-text-tertiary);
+}
+
+.nav-link.disabled::after {
+    content: "Coming soon";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-surface-elevated);
+    color: var(--color-text);
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+    margin-top: 0.5rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.nav-link.disabled:hover::after {
+    opacity: 1;
+}
+
 .nav-link-github {
     color: var(--color-text-secondary);
     transition: var(--transition-fast);
