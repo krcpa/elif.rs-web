@@ -3,434 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="elif.rs - A Rust web framework that just works. No magic, just solid engineering.">
-    <title>elif.rs | Rust Web Framework</title>
+    <meta name="description" content="elif.rs - The Rust web framework designed for clarity, speed, and developer happiness.">
+    <title>elif.rs - Modern Rust Web Framework</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="terminal-container">
-        <!-- Terminal Header -->
-        <header class="terminal-header">
-            <div class="terminal-bar">
-                <div class="terminal-title">elif.rs@v0.9.1 - Rust Web Framework</div>
-                <div class="terminal-controls">
-                    <span class="control minimize"></span>
-                    <span class="control maximize"></span>
-                    <span class="control close"></span>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-text">elif</span>
+                <span class="logo-dot">.</span>
+                <span class="logo-ext">rs</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#docs" class="nav-link">Documentation</a>
+                <a href="#ecosystem" class="nav-link">Ecosystem</a>
+                <a href="https://github.com/krcpa/elif.rs" class="nav-cta">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                    <span>Star on GitHub</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-text">Now in Preview</span>
+                <span class="badge-version">v0.9.1</span>
+            </div>
+            
+            <h1 class="hero-title">
+                The Rust framework<br>
+                for <span class="text-gradient">shipping fast</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Build production-ready web applications with the performance of Rust
+                and the elegance of modern frameworks.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">
+                    Get Started
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14m-7-7l7 7-7 7"/>
+                    </svg>
+                </a>
+                <button class="btn btn-secondary" id="copy-install">
+                    <code>cargo install elifrs</code>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">145k</div>
+                    <div class="stat-label">Req/sec</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">0.68ms</div>
+                    <div class="stat-label">Latency</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">12MB</div>
+                    <div class="stat-label">Memory</div>
                 </div>
             </div>
-        </header>
-
-        <!-- Main Terminal Content -->
-        <main class="terminal-body">
-            <!-- Hero Section -->
-            <section class="hero-terminal">
-                <pre class="ascii-art">
-┌─┐┬  ┬┌─┐  ┬─┐┌─┐
-├┤ │  │├┤   ├┬┘└─┐
-└─┘┴─┘┴└    ┴└─└─┘
-                </pre>
-                
-                <div class="terminal-prompt">
-                    <span class="prompt">$</span> 
-                    <span class="typed-text">cargo new my_app --template elif</span>
-                    <span class="cursor">_</span>
-                </div>
-
-                <div class="terminal-output">
-                    <pre class="success">✓ Created new elif.rs project</pre>
-                    <pre class="dim">  Configured with: web, orm, auth</pre>
-                    <pre class="dim">  Ready to build something amazing</pre>
-                </div>
-
-                <div class="hero-tagline">
-                    <h1>The Rust framework that speaks your language</h1>
-                    <p>No magic. No surprises. Just solid engineering.</p>
-                </div>
-
-                <div class="quick-links">
-                    <a href="#" class="link-button">[DOCS]</a>
-                    <a href="#" class="link-button">[GITHUB]</a>
-                    <a href="#" class="link-button">[DISCORD]</a>
-                </div>
-            </section>
-
-            <!-- Stats Bar -->
-            <section class="stats-bar">
-                <div class="stat">
-                    <span class="label">crates:</span>
-                    <span class="value">13</span>
-                </div>
-                <div class="stat">
-                    <span class="label">stars:</span>
-                    <span class="value">2.1k</span>
-                </div>
-                <div class="stat">
-                    <span class="label">downloads:</span>
-                    <span class="value">45k/mo</span>
-                </div>
-                <div class="stat">
-                    <span class="label">contributors:</span>
-                    <span class="value">89</span>
-                </div>
-            </section>
-
-            <!-- Philosophy Section -->
-            <section class="philosophy">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Philosophy
-                </h2>
-                
-                <div class="philosophy-grid">
-                    <div class="principle">
-                        <h3>&gt; Predictable</h3>
-                        <p>What you write is what runs. No hidden behavior, no runtime surprises.</p>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="principle">
-                        <h3>&gt; Type-Safe</h3>
-                        <p>If it compiles, it works. Rust's guarantees, extended to web development.</p>
-                    </div>
-                    <div class="principle">
-                        <h3>&gt; Fast</h3>
-                        <p>Zero-cost abstractions. Your app is as fast as hand-written code.</p>
-                    </div>
+                    <div class="window-title">main.rs</div>
                 </div>
-            </section>
-
-            <!-- Code Example -->
-            <section class="code-showcase">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Show me the code
-                </h2>
-
-                <div class="code-tabs">
-                    <button class="tab active" data-example="hello">hello_world.rs</button>
-                    <button class="tab" data-example="api">rest_api.rs</button>
-                    <button class="tab" data-example="auth">auth.rs</button>
-                    <button class="tab" data-example="db">database.rs</button>
-                </div>
-
-                <div class="code-container">
-                    <div class="line-numbers">
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>4</span>
-                        <span>5</span>
-                        <span>6</span>
-                        <span>7</span>
-                        <span>8</span>
-                        <span>9</span>
-                        <span>10</span>
-                        <span>11</span>
-                        <span>12</span>
-                    </div>
-                    <pre class="code-content" id="hello">
-<span class="keyword">use</span> <span class="module">elif</span>::{Application, Get, Response};
+                <pre class="code-content"><code><span class="keyword">use</span> <span class="module">elif</span>::prelude::*;
 
 <span class="attribute">#[tokio::main]</span>
 <span class="keyword">async fn</span> <span class="function">main</span>() {
-    <span class="keyword">let</span> app = Application::new()
-        .route(<span class="string">"/"</span>, Get(hello));
-    
-    app.run(<span class="string">"0.0.0.0:3000"</span>).<span class="keyword">await</span>;
+    <span class="keyword">let</span> app = Application::build()
+        .route(<span class="string">"/"</span>, get(index))
+        .route(<span class="string">"/users/:id"</span>, get(show_user))
+        .with_state(AppState::new())
+        .layer(TraceLayer::new());
+
+    app.serve(<span class="string">"0.0.0.0:3000"</span>).<span class="keyword">await</span>
 }
 
-<span class="keyword">async fn</span> <span class="function">hello</span>() -&gt; Response {
-    <span class="string">"Hello, Rust!"</span>.into()
-}</pre>
-                    <pre class="code-content hidden" id="api">
-<span class="keyword">use</span> <span class="module">elif</span>::{Application, Router, Json};
-<span class="keyword">use</span> <span class="module">serde</span>::{Serialize, Deserialize};
+<span class="keyword">async fn</span> <span class="function">index</span>() -> Html&lt;&'static str&gt; {
+    Html(<span class="string">"&lt;h1&gt;Welcome to elif.rs&lt;/h1&gt;"</span>)
+}</code></pre>
+            </div>
+        </div>
+    </section>
 
-<span class="attribute">#[derive(Serialize, Deserialize)]</span>
+    <!-- Features Grid -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need</h2>
+                <p class="section-subtitle">
+                    Built on solid foundations with batteries included
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Blazing Fast</h3>
+                    <p>Zero-cost abstractions and compile-time optimizations make your apps fly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Type Safe</h3>
+                    <p>Catch errors at compile time. If it builds, it works. No runtime surprises.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6m-7.5 7.5l-4.5-4.5m9 0l-4.5 4.5m-4.5-9L7.5 7.5m9 0l-4.5-4.5"/>
+                        </svg>
+                    </div>
+                    <h3>Async Native</h3>
+                    <p>Built on Tokio with first-class async/await support throughout.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/>
+                            <line x1="16" y1="8" x2="16" y2="8"/>
+                        </svg>
+                    </div>
+                    <h3>Developer First</h3>
+                    <p>Intuitive APIs, clear error messages, and excellent tooling built-in.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>Modular</h3>
+                    <p>Use what you need. From microservices to monoliths, elif scales with you.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Secure</h3>
+                    <p>Memory safety guaranteed by Rust. Built-in protections against common attacks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section class="examples">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Clean, expressive code</h2>
+                <p class="section-subtitle">
+                    Write less boilerplate, ship more features
+                </p>
+            </div>
+            
+            <div class="example-tabs">
+                <button class="example-tab active" data-example="routing">Routing</button>
+                <button class="example-tab" data-example="middleware">Middleware</button>
+                <button class="example-tab" data-example="database">Database</button>
+                <button class="example-tab" data-example="websocket">WebSocket</button>
+            </div>
+            
+            <div class="example-content">
+                <div class="example-pane active" id="routing">
+                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::prelude::*;
+
+<span class="keyword">pub fn</span> <span class="function">routes</span>() -> Router {
+    Router::new()
+        .route(<span class="string">"/"</span>, get(index))
+        .route(<span class="string">"/users"</span>, get(list_users).post(create_user))
+        .route(<span class="string">"/users/:id"</span>, 
+            get(show_user)
+            .put(update_user)
+            .delete(delete_user)
+        )
+        .nest(<span class="string">"/api"</span>, api_routes())
+}</code></pre>
+                </div>
+                
+                <div class="example-pane" id="middleware">
+                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::middleware::*;
+
+app.layer(
+    ServiceBuilder::new()
+        .layer(TraceLayer::new())
+        .layer(CompressionLayer::new())
+        .layer(RateLimitLayer::new(<span class="number">100</span>, Duration::from_secs(<span class="number">60</span>)))
+        .layer(AuthLayer::new(auth_service))
+        .layer(CorsLayer::permissive())
+);</code></pre>
+                </div>
+                
+                <div class="example-pane" id="database">
+                    <pre><code><span class="keyword">use</span> <span class="module">elif_orm</span>::prelude::*;
+
+<span class="attribute">#[derive(Model, Serialize)]</span>
 <span class="keyword">struct</span> <span class="type">User</span> {
-    id: <span class="type">u64</span>,
-    name: <span class="type">String</span>,
+    id: <span class="type">Uuid</span>,
+    email: <span class="type">String</span>,
+    created_at: <span class="type">DateTime</span>&lt;Utc&gt;,
 }
 
-<span class="keyword">async fn</span> <span class="function">get_users</span>() -&gt; Json&lt;Vec&lt;User&gt;&gt; {
-    <span class="keyword">let</span> users = fetch_from_db().<span class="keyword">await</span>;
-    Json(users)
-}</pre>
-                    <pre class="code-content hidden" id="auth">
-<span class="keyword">use</span> <span class="module">elif</span>::{middleware::Auth, Session};
-
-<span class="keyword">async fn</span> <span class="function">protected_route</span>(
-    session: Session,
-    user: AuthUser,
-) -&gt; Response {
-    format!(<span class="string">"Welcome, {}!"</span>, user.name).into()
-}
-
-app.route(<span class="string">"/dashboard"</span>, Get(protected_route))
-   .middleware(Auth::required());</pre>
-                    <pre class="code-content hidden" id="db">
-<span class="keyword">use</span> <span class="module">elif_orm</span>::{Model, Query};
-
-<span class="attribute">#[derive(Model)]</span>
-<span class="keyword">struct</span> <span class="type">Post</span> {
-    id: <span class="type">i64</span>,
-    title: <span class="type">String</span>,
-    content: <span class="type">String</span>,
-}
-
-<span class="keyword">let</span> posts = Post::query()
-    .filter(|p| p.published.eq(<span class="keyword">true</span>))
-    .order_by(|p| p.created_at.desc())
-    .fetch_all().<span class="keyword">await</span>?;</pre>
+<span class="keyword">let</span> users = User::find()
+    .filter(email.contains(<span class="string">"@example.com"</span>))
+    .order_by(created_at.desc())
+    .limit(<span class="number">10</span>)
+    .all(&pool)
+    .<span class="keyword">await</span>?;</code></pre>
                 </div>
-            </section>
+                
+                <div class="example-pane" id="websocket">
+                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::ws::{WebSocket, Message};
 
-            <!-- Features Grid -->
-            <section class="features">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Built-in batteries
-                </h2>
-
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <span class="feature-icon">[■]</span>
-                        <div class="feature-content">
-                            <h3>Async/Await Native</h3>
-                            <p>First-class async support. No callbacks, no promises.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">[▲]</span>
-                        <div class="feature-content">
-                            <h3>Type-Safe ORM</h3>
-                            <p>SQL queries checked at compile time. Migrations included.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">[●]</span>
-                        <div class="feature-content">
-                            <h3>WebSocket Support</h3>
-                            <p>Real-time communication with backpressure handling.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">[★]</span>
-                        <div class="feature-content">
-                            <h3>Authentication</h3>
-                            <p>Session management, JWT, OAuth2. Secure by default.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">[◆]</span>
-                        <div class="feature-content">
-                            <h3>Background Jobs</h3>
-                            <p>Queue system with retries and scheduled tasks.</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">[✓]</span>
-                        <div class="feature-content">
-                            <h3>Testing Suite</h3>
-                            <p>Integration tests, mocks, and fixtures built-in.</p>
-                        </div>
-                    </div>
+<span class="keyword">async fn</span> <span class="function">websocket_handler</span>(ws: WebSocket) {
+    <span class="keyword">let</span> (tx, rx) = ws.split();
+    
+    <span class="keyword">let</span> broadcast = rx
+        .filter_map(|msg| msg.ok())
+        .filter_map(|msg| msg.to_text().ok())
+        .map(|text| Message::text(format!(<span class="string">"Echo: {}"</span>, text)));
+    
+    broadcast.forward(tx).<span class="keyword">await</span>;
+}</code></pre>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- CLI Demo -->
-            <section class="cli-demo">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Developer Experience
-                </h2>
-
-                <div class="terminal-window">
-                    <div class="terminal-content">
-                        <div class="command-line">
-                            <span class="prompt">$</span> elif new blog --template full-stack
-                        </div>
-                        <div class="output">
-Creating new elif.rs project 'blog'...
-✓ Project structure created
-✓ Dependencies configured
-✓ Database migrations ready
-✓ Authentication system included
-✓ Admin panel generated
-
-<span class="success">Project created successfully!</span>
-
-Next steps:
-  cd blog
-  elif db create
-  elif db migrate
-  elif serve
-                        </div>
-                        
-                        <div class="command-line">
-                            <span class="prompt">$</span> elif generate scaffold Post title:string content:text
-                        </div>
-                        <div class="output">
-✓ Model created: src/models/post.rs
-✓ Controller created: src/controllers/posts_controller.rs
-✓ Views created: src/views/posts/
-✓ Migration created: migrations/20240319_create_posts.sql
-✓ Routes updated
-
-<span class="dim">Run 'elif db migrate' to update your database</span>
-                        </div>
-                    </div>
+    <!-- Ecosystem -->
+    <section class="ecosystem" id="ecosystem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Rich ecosystem</h2>
+                <p class="section-subtitle">
+                    Everything you need to build modern web applications
+                </p>
+            </div>
+            
+            <div class="ecosystem-grid">
+                <div class="eco-card">
+                    <h3>Core</h3>
+                    <ul>
+                        <li>
+                            <span class="package-name">elif</span>
+                            <span class="package-desc">Web framework core</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-orm</span>
+                            <span class="package-desc">Type-safe ORM</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-auth</span>
+                            <span class="package-desc">Authentication</span>
+                        </li>
+                    </ul>
                 </div>
-            </section>
+                
+                <div class="eco-card">
+                    <h3>Middleware</h3>
+                    <ul>
+                        <li>
+                            <span class="package-name">elif-cors</span>
+                            <span class="package-desc">CORS handling</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-ratelimit</span>
+                            <span class="package-desc">Rate limiting</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-compress</span>
+                            <span class="package-desc">Response compression</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="eco-card">
+                    <h3>Integrations</h3>
+                    <ul>
+                        <li>
+                            <span class="package-name">elif-graphql</span>
+                            <span class="package-desc">GraphQL support</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-redis</span>
+                            <span class="package-desc">Redis client</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-s3</span>
+                            <span class="package-desc">S3 storage</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="eco-card eco-highlight">
+                    <h3>CLI Tools</h3>
+                    <ul>
+                        <li>
+                            <span class="package-name">elif-cli</span>
+                            <span class="package-desc">Project scaffolding</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-migrate</span>
+                            <span class="package-desc">Database migrations</span>
+                        </li>
+                        <li>
+                            <span class="package-name">elif-watch</span>
+                            <span class="package-desc">Hot reloading</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Ecosystem -->
-            <section class="ecosystem">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Ecosystem
-                </h2>
-
-                <div class="package-grid">
-                    <div class="package-category">
-                        <h3>[ CORE ]</h3>
-                        <ul class="package-list">
-                            <li><span class="pkg">elif</span> <span class="version">0.9.1</span></li>
-                            <li><span class="pkg">elif-orm</span> <span class="version">0.7.3</span></li>
-                            <li><span class="pkg">elif-auth</span> <span class="version">0.5.2</span></li>
-                            <li><span class="pkg">elif-test</span> <span class="version">0.8.0</span></li>
-                        </ul>
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to build something amazing?</h2>
+                <p>Join thousands of developers shipping faster with elif.rs</p>
+                
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary btn-large">
+                        Read the Documentation
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14m-7-7l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="btn btn-secondary btn-large">
+                        View Examples
+                    </a>
+                </div>
+                
+                <div class="cta-stats">
+                    <div class="cta-stat">
+                        <strong>2.1k</strong> GitHub Stars
                     </div>
-                    <div class="package-category">
-                        <h3>[ MIDDLEWARE ]</h3>
-                        <ul class="package-list">
-                            <li><span class="pkg">elif-cors</span> <span class="version">0.4.1</span></li>
-                            <li><span class="pkg">elif-rate-limit</span> <span class="version">0.3.5</span></li>
-                            <li><span class="pkg">elif-compression</span> <span class="version">0.2.8</span></li>
-                            <li><span class="pkg">elif-tracing</span> <span class="version">0.6.0</span></li>
-                        </ul>
+                    <div class="cta-stat">
+                        <strong>89</strong> Contributors
                     </div>
-                    <div class="package-category">
-                        <h3>[ INTEGRATIONS ]</h3>
-                        <ul class="package-list">
-                            <li><span class="pkg">elif-graphql</span> <span class="version">0.5.0</span></li>
-                            <li><span class="pkg">elif-grpc</span> <span class="version">0.3.2</span></li>
-                            <li><span class="pkg">elif-redis</span> <span class="version">0.4.7</span></li>
-                            <li><span class="pkg">elif-s3</span> <span class="version">0.2.3</span></li>
-                        </ul>
-                    </div>
-                    <div class="package-category">
-                        <h3>[ TOOLING ]</h3>
-                        <ul class="package-list">
-                            <li><span class="pkg">elif-cli</span> <span class="version">0.9.1</span> <span class="badge">★</span></li>
-                            <li><span class="pkg">elif-migrate</span> <span class="version">0.6.4</span></li>
-                            <li><span class="pkg">elif-deploy</span> <span class="version">0.3.0</span></li>
-                            <li><span class="pkg">elif-bench</span> <span class="version">0.2.1</span></li>
-                        </ul>
+                    <div class="cta-stat">
+                        <strong>45k</strong> Monthly Downloads
                     </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Performance -->
-            <section class="performance">
-                <h2 class="section-header">
-                    <span class="hash">#</span> Performance
-                </h2>
-
-                <div class="benchmark-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Framework</th>
-                                <th>Req/sec</th>
-                                <th>Latency (ms)</th>
-                                <th>Memory (MB)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="highlight">
-                                <td>elif.rs</td>
-                                <td class="success">145,230</td>
-                                <td class="success">0.68</td>
-                                <td class="success">12.4</td>
-                            </tr>
-                            <tr>
-                                <td>actix-web</td>
-                                <td>142,890</td>
-                                <td>0.71</td>
-                                <td>13.1</td>
-                            </tr>
-                            <tr>
-                                <td>rocket</td>
-                                <td>89,340</td>
-                                <td>1.12</td>
-                                <td>18.7</td>
-                            </tr>
-                            <tr>
-                                <td>express.js</td>
-                                <td>32,450</td>
-                                <td>3.08</td>
-                                <td>42.3</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="benchmark-note">* Benchmarked on AWS c5.large, Ubuntu 22.04</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">elif</span>
+                        <span class="logo-dot">.</span>
+                        <span class="logo-ext">rs</span>
+                    </div>
+                    <p>The modern Rust web framework</p>
                 </div>
-            </section>
-
-            <!-- Call to Action -->
-            <section class="cta">
-                <div class="cta-content">
-                    <h2>Ready to build?</h2>
-                    <p>Join developers who ship faster with elif.rs</p>
+                
+                <nav class="footer-nav">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">Examples</a>
+                        <a href="#">Changelog</a>
+                    </div>
                     
-                    <div class="install-command">
-                        <code>
-                            <span class="prompt">$</span> cargo install elifrs
-                        </code>
-                        <button class="copy-btn" aria-label="Copy">📋</button>
-                    </div>
-
-                    <div class="cta-links">
-                        <a href="#" class="primary-link">Read the Guide →</a>
-                        <a href="#" class="secondary-link">View Examples</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="terminal-footer">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">API Reference</a></li>
-                            <li><a href="#">Examples</a></li>
-                            <li><a href="#">Changelog</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
+                    <div class="footer-column">
                         <h4>Community</h4>
-                        <ul>
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Discord</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Twitter</a></li>
-                        </ul>
+                        <a href="#">GitHub</a>
+                        <a href="#">Discord</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Blog</a>
                     </div>
-                    <div class="footer-section">
-                        <h4>More</h4>
-                        <ul>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Roadmap</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">License</a></li>
-                        </ul>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Tutorial</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Best Practices</a>
+                        <a href="#">FAQ</a>
                     </div>
+                </nav>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 elif.rs. Released under the MIT License.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Security</a>
                 </div>
-                <div class="footer-bottom">
-                    <p>elif.rs | MIT Licensed | Built with 🦀 and ❤️</p>
-                </div>
-            </footer>
-        </main>
-    </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
