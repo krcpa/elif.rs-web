@@ -36,107 +36,83 @@
 
     <!-- Hero -->
     <section class="hero">
-        <!-- Subtle background -->
-        <div class="hero-bg">
-            <div class="mesh-gradient"></div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-badge floating">
-                <span class="badge-text">Now in Preview</span>
-                <span class="badge-version">v0.9.1</span>
-            </div>
-            
-            <h1 class="hero-title">
-                <span class="title-line">
-                    <span class="word-reveal">The</span>
-                    <span class="word-reveal" style="animation-delay: 0.1s">Rust</span>
-                    <span class="word-reveal" style="animation-delay: 0.2s">framework</span>
-                </span>
-                <span class="title-line">
-                    <span class="word-reveal" style="animation-delay: 0.3s">for</span>
-                    <span class="text-gradient word-reveal" style="animation-delay: 0.4s">shipping fast</span>
-                </span>
-            </h1>
-            
-            <p class="hero-subtitle fade-up">
-                Build production-ready web applications with the performance of Rust
-                and the elegance of modern frameworks.
-            </p>
-            
-            <div class="hero-actions fade-up">
-                <a href="#" class="btn btn-primary">
-                    <span>Get Started</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14m-7-7l7 7-7 7"/>
-                    </svg>
-                </a>
-                <button class="btn btn-secondary" id="copy-install">
-                    <code>cargo install elifrs</code>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="hero-stats fade-up">
-                <div class="stat" data-counter="145">
-                    <div class="stat-number">
-                        <span class="counter">0</span>k
+        <div class="hero-container">
+            <!-- DX/AX Split Design -->
+            <div class="dx-ax-hero">
+                <div class="dx-section">
+                    <div class="dx-label">DX</div>
+                    <h2>Developer Experience</h2>
+                    <ul class="dx-features">
+                        <li>Zero boilerplate</li>
+                        <li>Instant feedback</li>
+                        <li>Type-safe by default</li>
+                    </ul>
+                </div>
+                
+                <div class="hero-center">
+                    <div class="hero-badge">
+                        <span>v0.9.1</span>
                     </div>
-                    <div class="stat-label">Req/sec</div>
-                    <div class="stat-bar">
-                        <div class="stat-progress"></div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-top">elif.rs</span>
+                        <span class="title-bottom">Where Rust meets Developer Experience</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Built for exceptional developer experience and AI-native workflows.
+                        From prototype to production in record time.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary btn-hero">
+                            Start Building
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14m-7-7l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <button class="btn btn-secondary btn-hero" id="copy-install">
+                            <code>cargo install elif</code>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
-                <div class="stat" data-counter="0.68">
-                    <div class="stat-number">
-                        <span class="counter">0</span>ms
-                    </div>
-                    <div class="stat-label">Latency</div>
-                    <div class="stat-bar">
-                        <div class="stat-progress"></div>
-                    </div>
-                </div>
-                <div class="stat" data-counter="12">
-                    <div class="stat-number">
-                        <span class="counter">0</span>MB
-                    </div>
-                    <div class="stat-label">Memory</div>
-                    <div class="stat-bar">
-                        <div class="stat-progress"></div>
-                    </div>
+                
+                <div class="ax-section">
+                    <div class="ax-label">AX</div>
+                    <h2>AI Experience</h2>
+                    <ul class="ax-features">
+                        <li>LLM-friendly APIs</li>
+                        <li>Self-documenting</li>
+                        <li>Context-aware</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="code-window">
-                <div class="window-header">
-                    <div class="window-controls">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            
+            <!-- Floating Code Preview -->
+            <div class="hero-code-preview">
+                <div class="code-card floating-card">
+                    <div class="code-header">
+                        <span class="code-lang">Rust</span>
+                        <span class="code-time">2 lines</span>
                     </div>
-                    <div class="window-title">main.rs</div>
+                    <pre><code><span class="keyword">let</span> app = elif::new();
+app.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?;</code></pre>
                 </div>
-                <pre class="code-content"><code><span class="keyword">use</span> <span class="module">elif</span>::prelude::*;
-
-<span class="attribute">#[tokio::main]</span>
-<span class="keyword">async fn</span> <span class="function">main</span>() {
-    <span class="keyword">let</span> app = Application::build()
-        .route(<span class="string">"/"</span>, get(index))
-        .route(<span class="string">"/users/:id"</span>, get(show_user))
-        .with_state(AppState::new())
-        .layer(TraceLayer::new());
-
-    app.serve(<span class="string">"0.0.0.0:3000"</span>).<span class="keyword">await</span>
-}
-
-<span class="keyword">async fn</span> <span class="function">index</span>() -> Html&lt;&'static str&gt; {
-    Html(<span class="string">"&lt;h1&gt;Welcome to elif.rs&lt;/h1&gt;"</span>)
-}</code></pre>
+                
+                <div class="code-card floating-card" style="animation-delay: 0.5s">
+                    <div class="code-header">
+                        <span class="code-lang">AI Ready</span>
+                        <span class="code-time">Auto-complete</span>
+                    </div>
+                    <pre><code><span class="comment">// AI understands your intent</span>
+<span class="keyword">let</span> api = app.api_builder()
+    .with_context(<span class="string">"user_service"</span>)
+    .auto_generate();</code></pre>
+                </div>
             </div>
         </div>
     </section>
@@ -145,9 +121,9 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Everything you need</h2>
+                <h2 class="section-title">Designed for the future</h2>
                 <p class="section-subtitle">
-                    Built on solid foundations with batteries included
+                    Optimized for both human and AI workflows
                 </p>
             </div>
             
@@ -158,8 +134,8 @@
                             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                         </svg>
                     </div>
-                    <h3>Blazing Fast</h3>
-                    <p>Zero-cost abstractions and compile-time optimizations make your apps fly.</p>
+                    <h3>Fast by default</h3>
+                    <p>Sub-millisecond response times. No runtime overhead.</p>
                 </div>
                 
                 <div class="feature-card hover-lift">
@@ -168,8 +144,8 @@
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <h3>Type Safe</h3>
-                    <p>Catch errors at compile time. If it builds, it works. No runtime surprises.</p>
+                    <h3>Type safe</h3>
+                    <p>If it compiles, it works. Ship with confidence.</p>
                 </div>
                 
                 <div class="feature-card hover-lift">
@@ -179,8 +155,8 @@
                             <path d="M12 1v6m0 6v6m-9-9h6m6 0h6m-7.5 7.5l-4.5-4.5m9 0l-4.5 4.5m-4.5-9L7.5 7.5m9 0l-4.5-4.5"/>
                         </svg>
                     </div>
-                    <h3>Async Native</h3>
-                    <p>Built on Tokio with first-class async/await support throughout.</p>
+                    <h3>Async first</h3>
+                    <p>Built on Tokio. Handle millions of concurrent connections.</p>
                 </div>
                 
                 <div class="feature-card hover-lift">
@@ -190,8 +166,8 @@
                             <line x1="16" y1="8" x2="16" y2="8"/>
                         </svg>
                     </div>
-                    <h3>Developer First</h3>
-                    <p>Intuitive APIs, clear error messages, and excellent tooling built-in.</p>
+                    <h3>AI-ready APIs</h3>
+                    <p>Self-documenting code. LLM-friendly patterns. Smart completions.</p>
                 </div>
                 
                 <div class="feature-card hover-lift">
@@ -202,8 +178,8 @@
                             <line x1="12" y1="22.08" x2="12" y2="12"/>
                         </svg>
                     </div>
-                    <h3>Modular</h3>
-                    <p>Use what you need. From microservices to monoliths, elif scales with you.</p>
+                    <h3>Modular design</h3>
+                    <p>Start small. Scale big. No rewrites.</p>
                 </div>
                 
                 <div class="feature-card hover-lift">
@@ -212,8 +188,8 @@
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <h3>Secure</h3>
-                    <p>Memory safety guaranteed by Rust. Built-in protections against common attacks.</p>
+                    <h3>Secure by design</h3>
+                    <p>Memory safe. OWASP compliant. Production ready.</p>
                 </div>
             </div>
         </div>
@@ -223,24 +199,24 @@
     <section class="philosophy">
         <div class="container">
             <div class="philosophy-content">
-                <h2 class="section-title">Built different</h2>
+                <h2 class="section-title">Philosophy</h2>
                 <div class="philosophy-grid">
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">01</div>
-                        <h3>No Magic</h3>
-                        <p>What you write is what runs. Predictable, debuggable, maintainable.</p>
+                        <h3>Transparent</h3>
+                        <p>No hidden complexity. Perfect for AI understanding.</p>
                         <div class="card-border"></div>
                     </div>
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">02</div>
-                        <h3>Pure Types</h3>
-                        <p>Framework types that compose beautifully. No leaky abstractions.</p>
+                        <h3>AI-friendly</h3>
+                        <p>Structured for both human and machine comprehension.</p>
                         <div class="card-border"></div>
                     </div>
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">03</div>
-                        <h3>Fast by Default</h3>
-                        <p>Performance isn't an afterthought. It's architected from day one.</p>
+                        <h3>Performance first</h3>
+                        <p>Every decision optimized for speed and efficiency.</p>
                         <div class="card-border"></div>
                     </div>
                 </div>
@@ -252,9 +228,9 @@
     <section class="examples">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Clean, expressive code</h2>
+                <h2 class="section-title">Expressive syntax</h2>
                 <p class="section-subtitle">
-                    Write less boilerplate, ship more features
+                    Write Rust that feels natural
                 </p>
             </div>
             
@@ -335,9 +311,9 @@ app.layer(
     <section class="ecosystem" id="ecosystem">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Rich ecosystem</h2>
+                <h2 class="section-title">Complete ecosystem</h2>
                 <p class="section-subtitle">
-                    Everything you need to build modern web applications
+                    Production-ready from day one
                 </p>
             </div>
             
@@ -347,15 +323,15 @@ app.layer(
                     <ul>
                         <li>
                             <span class="package-name">elif</span>
-                            <span class="package-desc">Web framework core</span>
+                            <span class="package-desc">Core framework</span>
                         </li>
                         <li>
                             <span class="package-name">elif-orm</span>
-                            <span class="package-desc">Type-safe ORM</span>
+                            <span class="package-desc">Database ORM</span>
                         </li>
                         <li>
                             <span class="package-name">elif-auth</span>
-                            <span class="package-desc">Authentication</span>
+                            <span class="package-desc">Auth & sessions</span>
                         </li>
                     </ul>
                 </div>
@@ -365,7 +341,7 @@ app.layer(
                     <ul>
                         <li>
                             <span class="package-name">elif-cors</span>
-                            <span class="package-desc">CORS handling</span>
+                            <span class="package-desc">CORS support</span>
                         </li>
                         <li>
                             <span class="package-name">elif-ratelimit</span>
@@ -373,7 +349,7 @@ app.layer(
                         </li>
                         <li>
                             <span class="package-name">elif-compress</span>
-                            <span class="package-desc">Response compression</span>
+                            <span class="package-desc">Compression</span>
                         </li>
                     </ul>
                 </div>
@@ -383,15 +359,15 @@ app.layer(
                     <ul>
                         <li>
                             <span class="package-name">elif-graphql</span>
-                            <span class="package-desc">GraphQL support</span>
+                            <span class="package-desc">GraphQL API</span>
                         </li>
                         <li>
                             <span class="package-name">elif-redis</span>
-                            <span class="package-desc">Redis client</span>
+                            <span class="package-desc">Redis cache</span>
                         </li>
                         <li>
                             <span class="package-name">elif-s3</span>
-                            <span class="package-desc">S3 storage</span>
+                            <span class="package-desc">Object storage</span>
                         </li>
                     </ul>
                 </div>
@@ -401,11 +377,11 @@ app.layer(
                     <ul>
                         <li>
                             <span class="package-name">elif-cli</span>
-                            <span class="package-desc">Project scaffolding</span>
+                            <span class="package-desc">CLI tool</span>
                         </li>
                         <li>
                             <span class="package-name">elif-migrate</span>
-                            <span class="package-desc">Database migrations</span>
+                            <span class="package-desc">Migrations</span>
                         </li>
                         <li>
                             <span class="package-name">elif-watch</span>
@@ -421,8 +397,8 @@ app.layer(
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to build something amazing?</h2>
-                <p>Join thousands of developers shipping faster with elif.rs</p>
+                <h2>Ready for the future of development?</h2>
+                <p>Join the community building with both human and AI intelligence</p>
                 
                 <div class="cta-actions">
                     <a href="#" class="btn btn-primary btn-large">
@@ -461,7 +437,7 @@ app.layer(
                         <span class="logo-dot">.</span>
                         <span class="logo-ext">rs</span>
                     </div>
-                    <p>The modern Rust web framework</p>
+                    <p>The AI-native Rust framework</p>
                 </div>
                 
                 <nav class="footer-nav">

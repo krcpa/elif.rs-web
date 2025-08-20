@@ -1,48 +1,29 @@
 // Minimal Refined Interactions
 
-// Remove magnetic effect for cleaner interaction
-
-// Animated counter
-function animateCounter(element, target, duration = 2000) {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
-        
-        if (target < 1) {
-            element.textContent = current.toFixed(2);
-        } else {
-            element.textContent = Math.floor(current);
-        }
-    }, 16);
-}
-
-// Initialize counters on scroll
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px'
-};
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-            entry.target.classList.add('counted');
-            const counter = entry.target.querySelector('.counter');
-            const target = parseFloat(entry.target.dataset.counter);
-            animateCounter(counter, target);
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
-}, observerOptions);
+});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const stats = document.querySelectorAll('.stat');
-    stats.forEach(stat => counterObserver.observe(stat));
+// Subtle parallax for code cards
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelectorAll('.floating-card');
+    
+    parallax.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1);
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translateY(${yPos}px) rotate(${index % 2 === 0 ? '-1' : '1'}deg)`;
+    });
 });
 
 // Copy to clipboard with ripple effect
