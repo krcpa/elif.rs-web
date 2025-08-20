@@ -327,7 +327,7 @@ h4 { font-size: 1.25rem; }
 }
 
 .dx-features li::before, .ax-features li::before {
-    content: "✓";
+    content: "";
     position: absolute;
     left: 0;
     color: var(--color-accent);
@@ -625,7 +625,7 @@ h4 { font-size: 1.25rem; }
     }
     
     .mobile-dx li::before, .mobile-ax li::before {
-        content: "✓";
+        content: "";
         position: absolute;
         left: 0;
         color: var(--color-accent);
