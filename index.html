@@ -121,8 +121,8 @@
                         <span class="code-lang">Rust</span>
                         <span class="code-time">2 lines</span>
                     </div>
-                    <pre><code><span class="keyword">let</span> app = elif::new();
-app.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?;</code></pre>
+                    <pre><code><span class="keyword">let</span> server = Server::new(config);
+server.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?;</code></pre>
                 </div>
                 
                 <div class="code-card floating-card" style="animation-delay: 0.5s">
@@ -130,10 +130,11 @@ app.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?
                         <span class="code-lang">AI Ready</span>
                         <span class="code-time">Auto-complete</span>
                     </div>
-                    <pre><code><span class="comment">// AI understands your intent</span>
-<span class="keyword">let</span> api = app.api_builder()
-    .with_context(<span class="string">"user_service"</span>)
-    .auto_generate();</code></pre>
+                    <pre><code><span class="comment">// AI-friendly patterns</span>
+<span class="keyword">async fn</span> <span class="function">handler</span>(req: &ElifRequest) {
+    <span class="keyword">let</span> user: User = req.json()?;
+    Ok(ElifResponse::ok().json(&user)?)
+}</code></pre>
                 </div>
             </div>
         </div>
@@ -265,64 +266,62 @@ app.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?
             
             <div class="example-content">
                 <div class="example-pane active" id="routing">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::prelude::*;
+                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::{ElifRouter, Route, ElifResponse};
 
-<span class="keyword">pub fn</span> <span class="function">routes</span>() -> Router {
-    Router::new()
-        .route(<span class="string">"/"</span>, get(index))
-        .route(<span class="string">"/users"</span>, get(list_users).post(create_user))
-        .route(<span class="string">"/users/:id"</span>, 
-            get(show_user)
-            .put(update_user)
-            .delete(delete_user)
-        )
-        .nest(<span class="string">"/api"</span>, api_routes())
+<span class="keyword">pub fn</span> <span class="function">routes</span>() -> ElifRouter {
+    ElifRouter::new()
+        .add_route(Route::get(<span class="string">"/"</span>, index))
+        .add_route(Route::get(<span class="string">"/users"</span>, list_users))
+        .add_route(Route::post(<span class="string">"/users"</span>, create_user))
+        .add_route(Route::get(<span class="string">"/users/:id"</span>, show_user))
+        .group(<span class="string">"/api"</span>, api_routes())
 }</code></pre>
                 </div>
                 
                 <div class="example-pane" id="middleware">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::middleware::*;
+                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::middleware::v2::{composition, factories};
 
-app.layer(
-    ServiceBuilder::new()
-        .layer(TraceLayer::new())
-        .layer(CompressionLayer::new())
-        .layer(RateLimitLayer::new(<span class="number">100</span>, Duration::from_secs(<span class="number">60</span>)))
-        .layer(AuthLayer::new(auth_service))
-        .layer(CorsLayer::permissive())
-);</code></pre>
+<span class="keyword">let</span> middleware = composition::compose4(
+    factories::logger(),
+    factories::cors(),
+    factories::rate_limit(<span class="number">100</span>),
+    factories::timeout(Duration::from_secs(<span class="number">30</span>))
+);
+
+server.use_middleware(middleware);</code></pre>
                 </div>
                 
                 <div class="example-pane" id="database">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif_orm</span>::prelude::*;
+                    <pre><code><span class="keyword">use</span> <span class="module">elif_orm</span>::{Database, QueryBuilder};
 
-<span class="attribute">#[derive(Model, Serialize)]</span>
-<span class="keyword">struct</span> <span class="type">User</span> {
-    id: <span class="type">Uuid</span>,
-    email: <span class="type">String</span>,
-    created_at: <span class="type">DateTime</span>&lt;Utc&gt;,
-}
+<span class="keyword">let</span> db = Database::connect(<span class="string">"postgresql://localhost/myapp"</span>).<span class="keyword">await</span>?;
 
-<span class="keyword">let</span> users = User::find()
-    .filter(email.contains(<span class="string">"@example.com"</span>))
-    .order_by(created_at.desc())
+<span class="keyword">let</span> users = QueryBuilder::new()
+    .table(<span class="string">"users"</span>)
+    .select(&[<span class="string">"id"</span>, <span class="string">"email"</span>, <span class="string">"created_at"</span>])
+    .where_clause(<span class="string">"email LIKE $1"</span>, vec![<span class="string">"%@example.com"</span>.to_string()])
+    .order_by(<span class="string">"created_at DESC"</span>)
     .limit(<span class="number">10</span>)
-    .all(&pool)
+    .fetch_all(&db)
     .<span class="keyword">await</span>?;</code></pre>
                 </div>
                 
                 <div class="example-pane" id="websocket">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif</span>::ws::{WebSocket, Message};
+                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::websocket::{WebSocketConnection, WebSocketMessage};
 
-<span class="keyword">async fn</span> <span class="function">websocket_handler</span>(ws: WebSocket) {
-    <span class="keyword">let</span> (tx, rx) = ws.split();
+<span class="keyword">async fn</span> <span class="function">websocket_handler</span>(connection: WebSocketConnection) {
+    <span class="keyword">let</span> (sender, <span class="keyword">mut</span> receiver) = connection.split();
     
-    <span class="keyword">let</span> broadcast = rx
-        .filter_map(|msg| msg.ok())
-        .filter_map(|msg| msg.to_text().ok())
-        .map(|text| Message::text(format!(<span class="string">"Echo: {}"</span>, text)));
-    
-    broadcast.forward(tx).<span class="keyword">await</span>;
+    <span class="keyword">while let</span> Some(message) = receiver.next().<span class="keyword">await</span> {
+        <span class="keyword">match</span> message? {
+            WebSocketMessage::Text(text) => {
+                sender.send(WebSocketMessage::Text(
+                    format!(<span class="string">"Echo: {}"</span>, text)
+                )).<span class="keyword">await</span>?;
+            }
+            _ => {}
+        }
+    }
 }</code></pre>
                 </div>
             </div>
