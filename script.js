@@ -1,23 +1,6 @@
-// Creative Modern Interactions
+// Minimal Refined Interactions
 
-// Magnetic button effect
-document.addEventListener('DOMContentLoaded', () => {
-    const magneticButtons = document.querySelectorAll('.magnetic');
-    
-    magneticButtons.forEach(button => {
-        button.addEventListener('mousemove', (e) => {
-            const rect = button.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            button.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-        });
-        
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = '';
-        });
-    });
-});
+// Remove magnetic effect for cleaner interaction
 
 // Animated counter
 function animateCounter(element, target, duration = 2000) {
@@ -70,14 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         copyBtn.addEventListener('click', async (e) => {
             const code = copyBtn.querySelector('code').textContent;
             
-            // Create ripple effect
-            const ripple = document.createElement('span');
-            ripple.className = 'ripple';
-            ripple.style.left = e.offsetX + 'px';
-            ripple.style.top = e.offsetY + 'px';
-            copyBtn.appendChild(ripple);
-            
-            setTimeout(() => ripple.remove(), 600);
+            // Simple feedback without ripple
             
             try {
                 await navigator.clipboard.writeText(code);
@@ -90,15 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 `;
-                copyBtn.style.background = 'var(--color-accent)';
-                copyBtn.style.color = 'var(--color-white)';
-                copyBtn.style.borderColor = 'var(--color-accent)';
+                copyBtn.classList.add('copied');
                 
                 setTimeout(() => {
                     copyBtn.innerHTML = originalHTML;
-                    copyBtn.style.background = '';
-                    copyBtn.style.color = '';
-                    copyBtn.style.borderColor = '';
+                    copyBtn.classList.remove('copied');
                 }, 2000);
             } catch (err) {
                 console.error('Failed to copy:', err);
