@@ -734,98 +734,253 @@ h4 { font-size: 1.25rem; }
 .code-card .string { color: #00c853; }
 .code-card .comment { color: #9e9e9e; font-style: italic; }
 
-/* Features Section */
-.features {
+/* Future-Ready Showcase */
+.future-showcase {
     padding: var(--space-32) 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: var(--space-16);
-}
-
-.section-title {
-    margin-bottom: var(--space-4);
-}
-
-.section-subtitle {
-    font-size: 1.125rem;
-    color: var(--color-gray-600);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-8);
-}
-
-.feature-card {
-    background: var(--color-white);
-    padding: var(--space-8);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-gray-100);
-    transition: all var(--transition-smooth);
-    position: relative;
-    overflow: hidden;
-}
-
-.hover-lift {
-    transform: translateY(0);
-}
-
-.hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--color-gray-200);
-}
-
-.card-shine {
-    display: none;
-}
-
-.feature-icon {
-    width: 40px;
-    height: 40px;
     background: var(--color-gray-50);
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-4);
     position: relative;
 }
 
-.icon-bg {
-    display: none;
+.future-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: center;
+    margin-bottom: var(--space-24);
 }
 
-.feature-icon svg {
-    stroke: var(--color-gray-700);
-    transition: stroke var(--transition-base);
-    stroke-width: 1.5;
+/* Left: Creative Vision */
+.future-philosophy {
+    padding-right: var(--space-8);
 }
 
-.feature-card:hover .feature-icon svg {
-    stroke: var(--color-accent);
+.future-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: var(--space-8);
 }
 
-/* Remove icon animations for cleaner look */
-.pulse, .rotate, .spin, .wave, .morph, .shield {
-    animation: none;
+.future-title .title-line {
+    display: block;
+    color: var(--color-black);
 }
 
-.feature-card h3 {
+.future-title .title-line.accent {
+    color: var(--color-accent);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.vision-statement {
+    margin-bottom: var(--space-12);
+}
+
+.vision-statement .statement-large {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-gray-900);
     margin-bottom: var(--space-2);
 }
 
-.feature-card p {
+.vision-statement .statement-sub {
+    font-size: 1.125rem;
     color: var(--color-gray-600);
+    font-style: italic;
+}
+
+.future-principles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.future-principles .principle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.future-principles .principle-number {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    width: 24px;
+}
+
+.future-principles .principle-text {
+    font-size: 1rem;
+    color: var(--color-gray-800);
+    font-weight: 500;
+}
+
+/* Right: Floating Feature Cards */
+.future-features {
+    position: relative;
+    height: 600px;
+}
+
+.future-card {
+    position: absolute;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    animation: float 8s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    transition: all var(--transition-smooth);
+}
+
+.future-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.future-card.primary {
+    width: 380px;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.future-card.secondary {
+    width: 320px;
+    z-index: 2;
+}
+
+.future-card.secondary:nth-child(2) {
+    top: 140px;
+    left: 0;
+}
+
+.future-card.secondary:nth-child(3) {
+    top: 300px;
+    right: 60px;
+}
+
+.future-card.tertiary {
+    width: 280px;
+    top: 480px;
+    left: 40px;
+    z-index: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-gray-50);
+    border-bottom: 1px solid var(--color-gray-200);
+}
+
+.card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-metric {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.card-content {
+    padding: var(--space-4);
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.card-content p {
     font-size: 0.9375rem;
-    line-height: 1.6;
+    color: var(--color-gray-600);
+    line-height: 1.5;
+    margin-bottom: var(--space-3);
+}
+
+.card-proof {
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    font-style: italic;
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+/* Future vs Present Comparison */
+.future-comparison {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    margin-top: var(--space-16);
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.comparison-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+}
+
+.evolution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.evolution-item {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.evolution-label {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.evolution-item.present .evolution-label {
+    background: var(--color-red-50);
+    color: var(--color-red-700);
+}
+
+.evolution-item.future .evolution-label {
+    background: var(--color-green-50);
+    color: var(--color-green-700);
+}
+
+.evolution-content {
+    padding: var(--space-6);
+}
+
+.evolution-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.evolution-list span {
+    font-size: 0.875rem;
+    color: var(--color-gray-700);
+    line-height: 1.5;
 }
 
 /* Philosophy Section */
@@ -913,74 +1068,275 @@ h4 { font-size: 1.25rem; }
     opacity: 1;
 }
 
-/* Code Examples */
-.examples {
+/* Removed sticky sections - caused overlapping issues */
+
+/* Creative Syntax Showcase */
+.syntax-showcase {
     padding: var(--space-32) 0;
-    background: var(--color-gray-50);
+    background: var(--color-white);
+    position: relative;
 }
 
-.example-tabs {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-2);
+.showcase-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    align-items: center;
+    margin-bottom: var(--space-24);
+}
+
+/* Reversed layout for syntax showcase */
+.showcase-layout.reversed {
+    grid-template-columns: 1fr 1fr;
+}
+
+.showcase-layout.reversed .showcase-code {
+    order: 1;
+    padding-left: var(--space-8);
+}
+
+.showcase-layout.reversed .showcase-philosophy {
+    order: 2;
+    padding-left: 0;
+    text-align: left;
+}
+
+/* Fix positioning for reversed layout */
+.showcase-layout.reversed .code-showcase-card.primary {
+    right: auto;
+    left: 0;
+}
+
+.showcase-layout.reversed .code-showcase-card.secondary:nth-child(2) {
+    left: auto;
+    right: 0;
+}
+
+.showcase-layout.reversed .code-showcase-card.secondary:nth-child(3) {
+    right: auto;
+    left: 40px;
+}
+
+/* Left: Creative Typography */
+.showcase-philosophy {
+    padding-right: var(--space-8);
+}
+
+.showcase-title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 0.9;
     margin-bottom: var(--space-8);
 }
 
-.example-tab {
-    padding: var(--space-2) var(--space-4);
-    background: var(--color-white);
-    border: 1px solid var(--color-gray-200);
-    border-radius: var(--radius-sm);
+.showcase-title .title-line {
+    display: block;
+    color: var(--color-black);
+}
+
+.showcase-title .title-line.accent {
+    color: var(--color-accent);
+    font-weight: 300;
+    font-style: italic;
+}
+
+.philosophy-statement {
+    margin-bottom: var(--space-12);
+}
+
+.statement-large {
+    font-size: 1.5rem;
     font-weight: 500;
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-    cursor: pointer;
-    transition: all var(--transition-base);
-}
-
-
-.example-tab:hover {
     color: var(--color-gray-900);
-    border-color: var(--color-gray-600);
+    margin-bottom: var(--space-2);
 }
 
-.example-tab.active {
-    background: var(--color-black);
-    color: var(--color-white);
-    border-color: var(--color-black);
+.statement-sub {
+    font-size: 1.125rem;
+    color: var(--color-gray-600);
+    font-style: italic;
 }
 
-.example-content {
-    max-width: 900px;
+.showcase-principles {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.principle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.principle-number {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    width: 24px;
+}
+
+.principle-text {
+    font-size: 1rem;
+    color: var(--color-gray-800);
+    font-weight: 500;
+}
+
+/* Right: Floating Code Cards */
+.showcase-code {
+    position: relative;
+    height: 500px;
+}
+
+.code-showcase-card {
+    position: absolute;
+    background: var(--color-gray-900);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-800);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+}
+
+.code-showcase-card.primary {
+    width: 420px;
+    top: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.code-showcase-card.secondary {
+    width: 340px;
+    z-index: 2;
+}
+
+.code-showcase-card.secondary:nth-child(2) {
+    top: 120px;
+    left: 0;
+}
+
+.code-showcase-card.secondary:nth-child(3) {
+    top: 280px;
+    right: 40px;
+}
+
+.code-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-gray-800);
+    border-bottom: 1px solid var(--color-gray-700);
+}
+
+.code-language {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.code-simplicity {
+    font-size: 0.75rem;
+    color: var(--color-gray-400);
+    font-family: var(--font-mono);
+}
+
+.code-content {
+    padding: var(--space-4);
+}
+
+.code-content pre {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-gray-300);
+    overflow-x: auto;
+}
+
+.code-insight {
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-gray-800);
+    border-top: 1px solid var(--color-gray-700);
+    font-size: 0.75rem;
+    color: var(--color-gray-400);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Interactive Comparison */
+.syntax-comparison {
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    margin-top: var(--space-16);
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.comparison-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    max-width: 1000px;
     margin: 0 auto;
 }
 
-.example-pane {
-    display: none;
-    background: var(--color-gray-900);
+.comparison-item {
+    background: var(--color-white);
     border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--color-gray-800);
+    box-shadow: var(--shadow-sm);
 }
 
-.example-pane.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
+.comparison-label {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.comparison-item.before .comparison-label {
+    background: var(--color-red-50);
+    color: var(--color-red-700);
 }
 
-.example-pane pre {
-    padding: var(--space-8);
-    overflow-x: auto;
+.comparison-item.after .comparison-label {
+    background: var(--color-green-50);
+    color: var(--color-green-700);
+}
+
+.comparison-code {
+    background: var(--color-gray-900);
+}
+
+.comparison-code pre {
+    padding: var(--space-4);
     font-family: var(--font-mono);
     font-size: 0.875rem;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--color-gray-300);
+    overflow-x: auto;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(0.5deg); }
+    50% { transform: translateY(-5px) rotate(-0.5deg); }
+    75% { transform: translateY(-15px) rotate(0.3deg); }
 }
 
 /* Ecosystem - New Creative Design */
@@ -1213,6 +1569,95 @@ h4 { font-size: 1.25rem; }
     }
     
     .package-hero {
+        padding: var(--space-8);
+    }
+    
+    /* Mobile Syntax Showcase */
+    .showcase-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .showcase-layout.reversed .showcase-code,
+    .showcase-layout.reversed .showcase-philosophy {
+        order: unset;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .showcase-philosophy {
+        padding-right: 0;
+        text-align: center;
+        order: 2;
+    }
+    
+    .showcase-title {
+        font-size: 3rem;
+    }
+    
+    .showcase-code {
+        height: 350px;
+        order: 1;
+    }
+    
+    .code-showcase-card.primary {
+        width: 100%;
+        position: static;
+        margin-bottom: var(--space-4);
+    }
+    
+    .code-showcase-card.secondary {
+        display: none;
+    }
+    
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .syntax-comparison {
+        padding: var(--space-8);
+    }
+    
+    /* Mobile Future Showcase */
+    .future-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .future-philosophy {
+        padding-right: 0;
+        text-align: center;
+        order: 2;
+    }
+    
+    .future-title {
+        font-size: 3rem;
+    }
+    
+    .future-features {
+        height: 400px;
+        order: 1;
+    }
+    
+    .future-card.primary {
+        width: 100%;
+        position: static;
+        margin-bottom: var(--space-4);
+    }
+    
+    .future-card.secondary,
+    .future-card.tertiary {
+        display: none;
+    }
+    
+    .evolution-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .future-comparison {
         padding: var(--space-8);
     }
 }

@@ -140,79 +140,126 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="features" id="features">
+    <!-- Future-Ready Showcase -->
+    <section class="future-showcase" id="features">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Designed for the future</h2>
-                <p class="section-subtitle">
-                    Optimized for both human and AI workflows
-                </p>
+            <!-- Split Layout: Vision + Features -->
+            <div class="future-layout">
+                <!-- Left: Creative Vision -->
+                <div class="future-philosophy">
+                    <div class="vision-content">
+                        <h2 class="future-title">
+                            <span class="title-line">Designed for</span>
+                            <span class="title-line accent">the future</span>
+                        </h2>
+                        
+                        <div class="vision-statement">
+                            <p class="statement-large">Where AI meets human intuition.</p>
+                            <p class="statement-sub">Built for the next generation of development.</p>
+                        </div>
+                        
+                        <div class="future-principles">
+                            <div class="principle">
+                                <span class="principle-number">01</span>
+                                <span class="principle-text">Performance by design</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">02</span>
+                                <span class="principle-text">AI-native patterns</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">03</span>
+                                <span class="principle-text">Scale without limits</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Floating Feature Cards -->
+                <div class="future-features">
+                    <!-- Performance Card -->
+                    <div class="future-card primary" data-reveal="float">
+                        <div class="card-header">
+                            <span class="card-category">Performance</span>
+                            <span class="card-metric">< 1ms</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Fast by default</h3>
+                            <p>Sub-millisecond response times. Zero runtime overhead.</p>
+                            <div class="card-proof">Memory safe. Type safe. Thread safe.</div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Card -->
+                    <div class="future-card secondary" data-reveal="float" style="--delay: 0.2s">
+                        <div class="card-header">
+                            <span class="card-category">Intelligence</span>
+                            <span class="card-metric">AI+</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>AI-ready APIs</h3>
+                            <p>Self-documenting. LLM-friendly patterns.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Scale Card -->
+                    <div class="future-card secondary" data-reveal="float" style="--delay: 0.4s">
+                        <div class="card-header">
+                            <span class="card-category">Architecture</span>
+                            <span class="card-metric">∞</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Infinite scale</h3>
+                            <p>Millions of concurrent connections. Modular by design.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Card -->
+                    <div class="future-card tertiary" data-reveal="float" style="--delay: 0.6s">
+                        <div class="card-header">
+                            <span class="card-category">Security</span>
+                            <span class="card-metric">100%</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Secure by design</h3>
+                            <p>Memory safety. OWASP compliant.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="features-grid">
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                        </svg>
-                    </div>
-                    <h3>Fast by default</h3>
-                    <p>Sub-millisecond response times. No runtime overhead.</p>
+            <!-- Future vs Present Comparison -->
+            <div class="future-comparison" data-reveal="slide-up">
+                <div class="comparison-header">
+                    <h3>The paradigm shift</h3>
                 </div>
                 
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
+                <div class="evolution-grid">
+                    <div class="evolution-item present">
+                        <div class="evolution-label">Yesterday: Complex</div>
+                        <div class="evolution-content">
+                            <div class="evolution-list">
+                                <span>⚡ Manual optimizations</span>
+                                <span>🔧 Boilerplate everywhere</span>
+                                <span>🐛 Runtime surprises</span>
+                                <span>📚 Steep learning curves</span>
+                                <span>🤖 AI as afterthought</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Type safe</h3>
-                    <p>If it compiles, it works. Ship with confidence.</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6m-7.5 7.5l-4.5-4.5m9 0l-4.5 4.5m-4.5-9L7.5 7.5m9 0l-4.5-4.5"/>
-                        </svg>
+                    
+                    <div class="evolution-item future">
+                        <div class="evolution-label">elif.rs: Effortless</div>
+                        <div class="evolution-content">
+                            <div class="evolution-list">
+                                <span>⚡ Fast by default</span>
+                                <span>✨ Zero ceremony</span>
+                                <span>🛡️ Compile-time guarantees</span>
+                                <span>🎯 Intuitive patterns</span>
+                                <span>🤖 AI-native design</span>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Async first</h3>
-                    <p>Built on Tokio. Handle millions of concurrent connections.</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/>
-                            <line x1="16" y1="8" x2="16" y2="8"/>
-                        </svg>
-                    </div>
-                    <h3>AI-ready APIs</h3>
-                    <p>Self-documenting code. LLM-friendly patterns. Smart completions.</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3>Modular design</h3>
-                    <p>Start small. Scale big. No rewrites.</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3>Secure by design</h3>
-                    <p>Memory safe. OWASP compliant. Production ready.</p>
                 </div>
             </div>
         </div>
@@ -247,82 +294,112 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
         </div>
     </section>
 
-    <!-- Code Examples -->
-    <section class="examples">
+    <!-- Creative Syntax Showcase -->
+    <section class="syntax-showcase">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Expressive syntax</h2>
-                <p class="section-subtitle">
-                    Write Rust that feels natural
-                </p>
+            <!-- Split Layout: Code + Philosophy (Reversed) -->
+            <div class="showcase-layout reversed">
+                <!-- Left: Floating Code Cards -->
+                <div class="showcase-code">
+                    <!-- Main Code Card -->
+                    <div class="code-showcase-card primary" data-reveal="float">
+                        <div class="code-card-header">
+                            <span class="code-language">Routing</span>
+                            <span class="code-simplicity">5 lines</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">let</span> router = Router::new()
+    .get(<span class="string">"/"</span>, index)
+    .post(<span class="string">"/users"</span>, create)
+    .group(<span class="string">"/api"</span>, api_routes());</code></pre>
+                        </div>
+                        <div class="code-insight">Clean. Declarative. Powerful.</div>
+                    </div>
+                    
+                    <!-- Secondary Cards -->
+                    <div class="code-showcase-card secondary" data-reveal="float" style="--delay: 0.2s">
+                        <div class="code-card-header">
+                            <span class="code-language">Async</span>
+                            <span class="code-simplicity">Natural</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">async fn</span> <span class="function">handler</span>(req: &Request) {
+    <span class="keyword">let</span> user: User = req.json()?;
+    Ok(Response::json(&user)?)
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="code-showcase-card secondary" data-reveal="float" style="--delay: 0.4s">
+                        <div class="code-card-header">
+                            <span class="code-language">Database</span>
+                            <span class="code-simplicity">Fluent</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">let</span> users = db.select()
+    .from(<span class="string">"users"</span>)
+    .where_like(<span class="string">"email"</span>, <span class="string">"%@domain.com"</span>)
+    .limit(<span class="number">10</span>).<span class="keyword">await</span>?;</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Creative Typography -->
+                <div class="showcase-philosophy">
+                    <div class="philosophy-content">
+                        <h2 class="showcase-title">
+                            <span class="title-line">Expressive</span>
+                            <span class="title-line accent">syntax</span>
+                        </h2>
+                        
+                        <div class="philosophy-statement">
+                            <p class="statement-large">Rust that reads like poetry.</p>
+                            <p class="statement-sub">Write with intention. Code with clarity.</p>
+                        </div>
+                        
+                        <div class="showcase-principles">
+                            <div class="principle">
+                                <span class="principle-number">01</span>
+                                <span class="principle-text">Intuitive patterns</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">02</span>
+                                <span class="principle-text">Zero ceremony</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">03</span>
+                                <span class="principle-text">Natural flow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="example-tabs">
-                <button class="example-tab active" data-example="routing">Routing</button>
-                <button class="example-tab" data-example="middleware">Middleware</button>
-                <button class="example-tab" data-example="database">Database</button>
-                <button class="example-tab" data-example="websocket">WebSocket</button>
-            </div>
-            
-            <div class="example-content">
-                <div class="example-pane active" id="routing">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::{ElifRouter, Route, ElifResponse};
-
-<span class="keyword">pub fn</span> <span class="function">routes</span>() -> ElifRouter {
-    ElifRouter::new()
-        .add_route(Route::get(<span class="string">"/"</span>, index))
-        .add_route(Route::get(<span class="string">"/users"</span>, list_users))
-        .add_route(Route::post(<span class="string">"/users"</span>, create_user))
-        .add_route(Route::get(<span class="string">"/users/:id"</span>, show_user))
-        .group(<span class="string">"/api"</span>, api_routes())
-}</code></pre>
+            <!-- Interactive Comparison -->
+            <div class="syntax-comparison" data-reveal="slide-up">
+                <div class="comparison-header">
+                    <h3>The difference is clear</h3>
                 </div>
                 
-                <div class="example-pane" id="middleware">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::middleware::v2::{composition, factories};
-
-<span class="keyword">let</span> middleware = composition::compose4(
-    factories::logger(),
-    factories::cors(),
-    factories::rate_limit(<span class="number">100</span>),
-    factories::timeout(Duration::from_secs(<span class="number">30</span>))
-);
-
-server.use_middleware(middleware);</code></pre>
-                </div>
-                
-                <div class="example-pane" id="database">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif_orm</span>::{Database, QueryBuilder};
-
-<span class="keyword">let</span> db = Database::connect(<span class="string">"postgresql://localhost/myapp"</span>).<span class="keyword">await</span>?;
-
-<span class="keyword">let</span> users = QueryBuilder::new()
-    .table(<span class="string">"users"</span>)
-    .select(&[<span class="string">"id"</span>, <span class="string">"email"</span>, <span class="string">"created_at"</span>])
-    .where_clause(<span class="string">"email LIKE $1"</span>, vec![<span class="string">"%@example.com"</span>.to_string()])
-    .order_by(<span class="string">"created_at DESC"</span>)
-    .limit(<span class="number">10</span>)
-    .fetch_all(&db)
-    .<span class="keyword">await</span>?;</code></pre>
-                </div>
-                
-                <div class="example-pane" id="websocket">
-                    <pre><code><span class="keyword">use</span> <span class="module">elif_http</span>::websocket::{WebSocketConnection, WebSocketMessage};
-
-<span class="keyword">async fn</span> <span class="function">websocket_handler</span>(connection: WebSocketConnection) {
-    <span class="keyword">let</span> (sender, <span class="keyword">mut</span> receiver) = connection.split();
-    
-    <span class="keyword">while let</span> Some(message) = receiver.next().<span class="keyword">await</span> {
-        <span class="keyword">match</span> message? {
-            WebSocketMessage::Text(text) => {
-                sender.send(WebSocketMessage::Text(
-                    format!(<span class="string">"Echo: {}"</span>, text)
-                )).<span class="keyword">await</span>?;
-            }
-            _ => {}
-        }
-    }
-}</code></pre>
+                <div class="comparison-grid">
+                    <div class="comparison-item before">
+                        <div class="comparison-label">Before: Verbose</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// Traditional approach</span>
+<span class="keyword">let</span> <span class="keyword">mut</span> app = App::new();
+app.at(<span class="string">"/users"</span>).get(list_users);
+app.at(<span class="string">"/users"</span>).post(create_user);
+app.at(<span class="string">"/users/:id"</span>).get(show_user);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item after">
+                        <div class="comparison-label">elif.rs: Expressive</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// Natural patterns</span>
+Router::resource(<span class="string">"/users"</span>, UserController);</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,17 +537,6 @@ server.use_middleware(middleware);</code></pre>
                     </a>
                 </div>
                 
-                <div class="cta-stats">
-                    <div class="cta-stat">
-                        <strong>2.1k</strong> GitHub Stars
-                    </div>
-                    <div class="cta-stat">
-                        <strong>89</strong> Contributors
-                    </div>
-                    <div class="cta-stat">
-                        <strong>45k</strong> Monthly Downloads
-                    </div>
-                </div>
             </div>
         </div>
     </section>
