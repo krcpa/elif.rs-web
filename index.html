@@ -79,6 +79,28 @@
                             </svg>
                         </button>
                     </div>
+                    
+                    <!-- Mobile DX/AX Grid -->
+                    <div class="mobile-dx-ax">
+                        <div class="mobile-dx">
+                            <h3>DX</h3>
+                            <p>Developer Experience</p>
+                            <ul>
+                                <li>Zero boilerplate</li>
+                                <li>Instant feedback</li>
+                                <li>Type-safe</li>
+                            </ul>
+                        </div>
+                        <div class="mobile-ax">
+                            <h3>AX</h3>
+                            <p>AI Experience</p>
+                            <ul>
+                                <li>LLM-friendly</li>
+                                <li>Self-documenting</li>
+                                <li>Context-aware</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="ax-section">
@@ -311,83 +333,111 @@ app.layer(
     <section class="ecosystem" id="ecosystem">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Complete ecosystem</h2>
+                <h2 class="section-title">Everything you need</h2>
                 <p class="section-subtitle">
-                    Production-ready from day one
+                    A complete ecosystem designed for modern development
                 </p>
             </div>
             
-            <div class="ecosystem-grid">
-                <div class="eco-card">
-                    <h3>Core</h3>
-                    <ul>
-                        <li>
-                            <span class="package-name">elif</span>
-                            <span class="package-desc">Core framework</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-orm</span>
-                            <span class="package-desc">Database ORM</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-auth</span>
-                            <span class="package-desc">Auth & sessions</span>
-                        </li>
-                    </ul>
+            <!-- Creative Package Display -->
+            <div class="ecosystem-display">
+                <!-- Core Package Highlight -->
+                <div class="package-hero">
+                    <div class="package-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="9" y1="9" x2="15" y2="15"/>
+                            <line x1="15" y1="9" x2="9" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3>elif-core</h3>
+                    <p>The foundation. Everything starts here.</p>
+                    <div class="package-stats">
+                        <span>45k downloads</span>
+                        <span>v0.9.1</span>
+                    </div>
                 </div>
                 
-                <div class="eco-card">
-                    <h3>Middleware</h3>
-                    <ul>
-                        <li>
-                            <span class="package-name">elif-cors</span>
-                            <span class="package-desc">CORS support</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-ratelimit</span>
-                            <span class="package-desc">Rate limiting</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-compress</span>
-                            <span class="package-desc">Compression</span>
-                        </li>
-                    </ul>
+                <!-- Package Categories -->
+                <div class="package-categories">
+                    <div class="category dx-focused">
+                        <h4><span class="category-label">DX</span> Developer Tools</h4>
+                        <div class="package-list">
+                            <div class="package-item">
+                                <code>elif-cli</code>
+                                <span>Scaffold, build, deploy</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-watch</code>
+                                <span>Hot reload everything</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-test</code>
+                                <span>Testing made simple</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-debug</code>
+                                <span>Visual debugging</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category ax-focused">
+                        <h4><span class="category-label">AX</span> AI Integration</h4>
+                        <div class="package-list">
+                            <div class="package-item">
+                                <code>elif-ai</code>
+                                <span>LLM-ready APIs</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-docs</code>
+                                <span>Auto documentation</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-complete</code>
+                                <span>Smart completions</span>
+                            </div>
+                            <div class="package-item">
+                                <code>elif-analyze</code>
+                                <span>Code insights</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="eco-card">
-                    <h3>Integrations</h3>
-                    <ul>
-                        <li>
-                            <span class="package-name">elif-graphql</span>
-                            <span class="package-desc">GraphQL API</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-redis</span>
-                            <span class="package-desc">Redis cache</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-s3</span>
-                            <span class="package-desc">Object storage</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="eco-card eco-highlight">
-                    <h3>CLI Tools</h3>
-                    <ul>
-                        <li>
-                            <span class="package-name">elif-cli</span>
-                            <span class="package-desc">CLI tool</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-migrate</span>
-                            <span class="package-desc">Migrations</span>
-                        </li>
-                        <li>
-                            <span class="package-name">elif-watch</span>
-                            <span class="package-desc">Hot reloading</span>
-                        </li>
-                    </ul>
+                <!-- Essential Packages Grid -->
+                <div class="essential-packages">
+                    <h4>Essential packages</h4>
+                    <div class="package-grid">
+                        <div class="package-card">
+                            <div class="package-header">
+                                <code>elif-orm</code>
+                                <span class="package-badge">Popular</span>
+                            </div>
+                            <p>Type-safe database queries</p>
+                        </div>
+                        <div class="package-card">
+                            <div class="package-header">
+                                <code>elif-auth</code>
+                                <span class="package-badge">Essential</span>
+                            </div>
+                            <p>Authentication done right</p>
+                        </div>
+                        <div class="package-card">
+                            <div class="package-header">
+                                <code>elif-graphql</code>
+                                <span class="package-badge">New</span>
+                            </div>
+                            <p>GraphQL in minutes</p>
+                        </div>
+                        <div class="package-card">
+                            <div class="package-header">
+                                <code>elif-cache</code>
+                                <span class="package-badge">Fast</span>
+                            </div>
+                            <p>Redis & in-memory caching</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
