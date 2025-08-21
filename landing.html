@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="elif.rs — Rust web framework where Developer Experience meets AI-native design." />
+  <title>elif.rs — Rust Web. Exceptional DX.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <span>elif</span><span class="dot">.</span><span>rs</span>
+      </a>
+      <div class="nav-links">
+        <a href="#why">Why</a>
+        <a href="#features">Features</a>
+        <a href="#quickstart">Quick Start</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a class="btn-sm" href="https://github.com/krcpa/elif.rs">GitHub →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Where Rust meets Developer Experience</div>
+        <h1 class="h1">Rust web, made delightful — built for humans, optimized for AI.</h1>
+        <p class="lead">elif.rs is a fast, type-safe, AI-native web framework. Zero boilerplate, clear APIs, and predictable performance so you ship faster.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#quickstart">Get started</a>
+          <a class="btn btn-secondary" href="https://docs.rs/elifrs">Read the docs</a>
+        </div>
+        <div class="install">
+          <code>cargo install elifrs</code>
+          <button class="copy-btn" aria-label="Copy install" data-copy="cargo install elifrs">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="terminal">
+          <div class="terminal-hd"><span></span><span></span><span></span></div>
+          <div class="terminal-body">
+            <div><span class="prompt">$</span> elifrs new my-app</div>
+            <div><span class="prompt">$</span> cd my-app</div>
+            <div><span class="prompt">$</span> cargo run</div>
+            <div style="margin-top:8px;color:#1aa34a">✓ Server running at http://localhost:3000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Why -->
+  <section id="why" class="section">
+    <div class="container">
+      <div class="section-hd">
+        <h2 class="h2">DX and AX by design</h2>
+        <p class="sub">Designed for exceptional developer experience and AI-native workflows.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><h3>Zero Boilerplate</h3><p>Start faster with minimal code and sensible defaults.</p></div>
+        <div class="card"><h3>Type Safe</h3><p>Rust-first, compile-time guarantees. If it compiles, it works.</p></div>
+        <div class="card"><h3>LLM‑Friendly</h3><p>APIs and patterns that AI understands and explains.</p></div>
+        <div class="card"><h3>Predictable Performance</h3><p>Sub‑millisecond latency. Zero runtime overhead.</p></div>
+        <div class="card"><h3>Clear Errors</h3><p>Helpful messages that guide you to a fix.</p></div>
+        <div class="card"><h3>Hot Reload</h3><p>Instant feedback during development with <code>elifrs serve --reload</code>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start -->
+  <section id="quickstart" class="section">
+    <div class="container">
+      <div class="section-hd">
+        <h2 class="h2">Quick Start</h2>
+        <p class="sub">Install, scaffold, and run your first app in minutes.</p>
+      </div>
+      <pre><code class="language-bash"># Install CLI and create a project
+cargo install elifrs
+elifrs new my-app
+cd my-app
+
+# Start development
+cargo run</code></pre>
+
+      <div style="height:12px"></div>
+      <pre><code>// Your first app (excerpt)
+use elif_http::{Server, HttpConfig, ElifRouter, ElifResponse};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let router = ElifRouter::new()
+        .get("/", || async { ElifResponse::ok().text("Hello from elif.rs!") })
+        .get("/users", || async {
+            ElifResponse::ok().json(&serde_json::json!({
+                "users": [
+                    {"id": 1, "name": "Alice"},
+                    {"id": 2, "name": "Bob"}
+                ]
+            }))
+        });
+    let mut server = Server::new(HttpConfig::default());
+    server.use_router(router);
+    server.run("0.0.0.0:3000").await?;
+    Ok(())
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-hd">
+        <h2 class="h2">Framework features</h2>
+        <p class="sub">Modern middleware, modular design, and real‑time capabilities.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Middleware v2</h3>
+          <pre><code>use elif_http::middleware::v2::{Middleware, Next, NextFuture};
+impl Middleware for AuthMiddleware {
+  fn handle(&self, req: ElifRequest, next: Next) -> NextFuture<'static> {
+    Box::pin(async move {
+      if !is_authenticated(&req) { return ElifResponse::unauthorized(); }
+      next.run(req).await
+    })
+  }
+}</code></pre>
+        </div>
+        <div class="card">
+          <h3>Modular</h3>
+          <pre><code>use elif_http::middleware::v2::{factories, composition};
+let api_stack = composition::compose3(
+  factories::rate_limit(100),
+  factories::cors_with_origins(vec!["https://yourdomain.com".into()]),
+  factories::timeout(Duration::from_secs(30))
+);</code></pre>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+      <div class="grid cols-3">
+        <div class="card kpi"><div class="val">145k req/s</div><div class="label">Benchmark</div></div>
+        <div class="card kpi"><div class="val">0.68 ms</div><div class="label">Avg latency</div></div>
+        <div class="card kpi"><div class="val">Zero</div><div class="label">Runtime overhead</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem -->
+  <section id="ecosystem" class="section">
+    <div class="container">
+      <div class="section-hd">
+        <h2 class="h2">Ecosystem</h2>
+        <p class="sub">Core packages and DX tools that work together.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><h3>elif-core</h3><p>Core architecture</p></div>
+        <div class="card"><h3>elif-http</h3><p>HTTP server &amp; WebSocket</p></div>
+        <div class="card"><h3>elif-orm</h3><p>Type-safe ORM</p></div>
+        <div class="card"><h3>elif-auth</h3><p>Authentication</p></div>
+        <div class="card"><h3>elif-cache</h3><p>Caching system</p></div>
+        <div class="card"><h3>elifrs</h3><p>CLI for DX &amp; AX</p></div>
+      </div>
+
+      <div style="height:16px"></div>
+      <pre><code class="language-bash"># DX toolkit
+elifrs new &lt;app&gt;
+elifrs serve --reload
+elifrs generate
+elifrs openapi generate</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;">
+      <div>© 2024 elif.rs — MIT</div>
+      <div class="links">
+        <a href="https://docs.rs/elifrs">Docs</a>
+        <a href="https://github.com/krcpa/elif.rs">GitHub</a>
+        <a href="https://discord.gg/elifrs">Discord</a>
+        <a href="#quickstart">Quick Start</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

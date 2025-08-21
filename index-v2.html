@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="elif.rs — Rust web framework where DX meets AI-native design." />
+  <title>elif.rs — Rust web, exceptional DX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="v2.css" />
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="v2-nav">
+    <div class="container inner">
+      <a class="v2-brand" href="#"><span>elif</span><span class="dot">.</span><span>rs</span></a>
+      <div class="v2-links">
+        <a href="#dx">DX</a>
+        <a href="#ax">AX</a>
+        <a href="#start">Start</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a class="v2-cta" href="https://github.com/krcpa/elif.rs">GitHub →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="v2-hero">
+    <div class="container v2-hero-grid">
+      <div>
+        <div class="eyebrow">Where Rust meets Developer Experience</div>
+        <h1 class="display">Rust web, made delightful.</h1>
+        <p class="tagline">Fast, type‑safe, and AI‑native — elif.rs gives you zero‑boilerplate APIs, clear errors, and predictable performance so you can ship with confidence.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#start">Get started</a>
+          <a class="btn btn-ghost" href="https://docs.rs/elifrs">Read the docs</a>
+        </div>
+        <div class="install-pill">
+          <code>cargo install elifrs</code>
+          <button class="copy-btn" data-copy="cargo install elifrs" aria-label="Copy install">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+        </div>
+
+        <div class="band">
+          <div class="metric"><div class="val">145k req/s</div><div class="lab">Benchmark</div></div>
+          <div class="metric"><div class="val">0.68 ms</div><div class="lab">Avg latency</div></div>
+          <div class="metric"><div class="val">Zero</div><div class="lab">Runtime overhead</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="code-card">
+          <div class="code-head"><span></span><span></span><span></span></div>
+          <div class="code-body">
+<pre><code><span class="kw">use</span> elif_http::{Server, HttpConfig, ElifRouter, ElifResponse};
+
+<span class="kw">#[tokio::main]</span>
+<span class="kw">async fn</span> main() -&gt; Result&lt;(), Box&lt;dyn std::error::Error&gt;&gt; {
+  <span class="kw">let</span> router = ElifRouter::new()
+    .get(<span class="cm">"/"</span>, || <span class="kw">async</span> { ElifResponse::ok().text(<span class="cm">"Hello from elif.rs!"</span>) });
+  <span class="kw">let mut</span> server = Server::new(HttpConfig::default());
+  server.use_router(router);
+  server.run(<span class="cm">"0.0.0.0:3000"</span>).await?;
+  Ok(())
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DX / AX Split -->
+  <section id="dx" class="section">
+    <div class="container split">
+      <div>
+        <h2 class="h2">DX that gets out of your way</h2>
+        <p class="sub">Minimal code. Hot reload. Helpful errors. If it compiles, it works.</p>
+        <div class="features">
+          <div class="f-row"><div><h3>Zero boilerplate</h3><p>Start fast with sensible defaults and clear APIs.</p></div></div>
+          <div class="f-row"><div><h3>Type safe</h3><p>Rust-first design catches errors before runtime.</p></div></div>
+          <div class="f-row"><div><h3>Hot reload</h3><p>Iterate instantly with <code>elifrs serve --reload</code>.</p></div></div>
+        </div>
+      </div>
+      <div id="ax">
+        <h2 class="h2">AX for the AI era</h2>
+        <p class="sub">APIs that LLMs understand and can generate against.</p>
+        <div class="features">
+          <div class="f-row"><div><h3>LLM‑friendly</h3><p>Self‑documenting patterns that are easy to parse.</p></div></div>
+          <div class="f-row"><div><h3>Context aware</h3><p>Designed for codegen, refactors, and validation.</p></div></div>
+          <div class="f-row"><div><h3>Predictable</h3><p>Consistent shapes keep humans and AI in sync.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start (steps) -->
+  <section id="start" class="section">
+    <div class="container split">
+      <div>
+        <h2 class="h2">Three steps to your first app</h2>
+        <p class="sub">Install the CLI, scaffold a project, then run.</p>
+        <div class="steps">
+          <div class="step"><div class="no">1</div><div><b>Install</b><br/><code>cargo install elifrs</code></div></div>
+          <div class="step"><div class="no">2</div><div><b>Scaffold</b><br/><code>elifrs new my-app</code></div></div>
+          <div class="step"><div class="no">3</div><div><b>Run</b><br/><code>cargo run</code></div></div>
+        </div>
+      </div>
+      <div>
+<pre><code class="language-bash"># DX toolkit
+elifrs new &lt;app&gt;
+elifrs serve --reload
+elifrs generate
+elifrs openapi generate</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem -->
+  <section id="ecosystem" class="section">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:14px">Ecosystem</h2>
+      <p class="sub" style="margin-bottom:18px">Core packages and DX tools that work together.</p>
+      <div class="pill-grid">
+        <span class="pill">elif-core</span>
+        <span class="pill">elif-http</span>
+        <span class="pill">elif-orm</span>
+        <span class="pill">elif-auth</span>
+        <span class="pill">elif-cache</span>
+        <span class="pill">elifrs (CLI)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="v2-footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;">
+      <div>© 2024 elif.rs — MIT</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="https://docs.rs/elifrs">Docs</a>
+        <a href="https://github.com/krcpa/elif.rs">GitHub</a>
+        <a href="#start">Quick Start</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -43,9 +43,9 @@
                     <div class="dx-label">DX</div>
                     <h2>Developer Experience</h2>
                     <ul class="dx-features">
-                        <li>Zero boilerplate</li>
-                        <li>Instant feedback</li>
-                        <li>Type-safe by default</li>
+                        <li>70% less boilerplate</li>
+                        <li>Declarative controllers</li>
+                        <li>Convention over configuration</li>
                     </ul>
                 </div>
                 
@@ -60,8 +60,8 @@
                     </h1>
                     
                     <p class="hero-subtitle">
-                        Built for exceptional developer experience and AI-native workflows.
-                        From prototype to production in record time.
+                        Rust that reads like poetry, performs like metal.
+                        Built by humans and AI, for humans and AI.
                     </p>
                     
                     <div class="hero-actions">
@@ -107,9 +107,9 @@
                     <div class="ax-label">AX</div>
                     <h2>AI Experience</h2>
                     <ul class="ax-features">
-                        <li>LLM-friendly APIs</li>
-                        <li>Self-documenting</li>
-                        <li>Context-aware</li>
+                        <li>AI understands naturally</li>
+                        <li>Self-documenting patterns</li>
+                        <li>LLM-optimized design</li>
                     </ul>
                 </div>
             </div>
@@ -121,8 +121,8 @@
                         <span class="code-lang">Rust</span>
                         <span class="code-time">2 lines</span>
                     </div>
-                    <pre><code><span class="keyword">let</span> server = Server::new(config);
-server.run(<span class="string">":3000"</span>).<span class="keyword">await</span>?;</code></pre>
+                    <pre><code><span class="keyword">let</span> app = ElifApp::new();
+app.listen(<span class="string">":3000"</span>).<span class="keyword">await</span>?;</code></pre>
                 </div>
                 
                 <div class="code-card floating-card" style="animation-delay: 0.5s">
@@ -131,9 +131,10 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                         <span class="code-time">Auto-complete</span>
                     </div>
                     <pre><code><span class="comment">// AI-friendly patterns</span>
-<span class="keyword">async fn</span> <span class="function">handler</span>(req: &ElifRequest) {
-    <span class="keyword">let</span> user: User = req.json()?;
-    Ok(ElifResponse::ok().json(&user)?)
+<span class="attribute">#[post("/users")]</span>
+<span class="attribute">#[body(user: CreateUser)]</span>
+<span class="keyword">async fn</span> <span class="function">create</span>(user: CreateUser) -> ElifResponse {
+    ElifResponse::created().json(&user)
 }</code></pre>
                 </div>
             </div>
@@ -239,21 +240,177 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                 <div class="philosophy-grid">
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">01</div>
-                        <h3>Transparent</h3>
-                        <p>No hidden complexity. Perfect for AI understanding.</p>
+                        <h3>Convention First</h3>
+                        <p>Zero boilerplate. Every pattern carefully designed.</p>
                         <div class="card-border"></div>
                     </div>
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">02</div>
-                        <h3>AI-friendly</h3>
-                        <p>Structured for both human and machine comprehension.</p>
+                        <h3>AI-Native</h3>
+                        <p>APIs designed for LLM understanding from day one.</p>
                         <div class="card-border"></div>
                     </div>
                     <div class="philosophy-card" data-reveal="hover">
                         <div class="card-number">03</div>
-                        <h3>Performance first</h3>
-                        <p>Every decision optimized for speed and efficiency.</p>
+                        <h3>Performance Always</h3>
+                        <p>Every decision optimized for speed and reliability.</p>
                         <div class="card-border"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Paradigm Shift Section -->
+    <section class="paradigm-shift">
+        <div class="container">
+            <!-- Split Layout: Philosophy + Implementation -->
+            <div class="showcase-layout">
+                <!-- Left: Creative Philosophy -->
+                <div class="showcase-philosophy">
+                    <div class="philosophy-content">
+                        <h2 class="showcase-title">
+                            <span class="title-line">The paradigm</span>
+                            <span class="title-line accent">shift</span>
+                        </h2>
+                        
+                        <div class="philosophy-statement">
+                            <p class="statement-large">Convention over configuration.</p>
+                            <p class="statement-sub">Without compromise.</p>
+                        </div>
+                        
+                        <div class="showcase-principles">
+                            <div class="principle">
+                                <span class="principle-number">01</span>
+                                <span class="principle-text">Declarative controllers</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">02</span>
+                                <span class="principle-text">Zero boilerplate</span>
+                            </div>
+                            <div class="principle">
+                                <span class="principle-number">03</span>
+                                <span class="principle-text">AI understands naturally</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Floating Implementation Cards -->
+                <div class="showcase-code">
+                    <!-- Main Paradigm Card -->
+                    <div class="code-showcase-card primary" data-reveal="float">
+                        <div class="code-card-header">
+                            <span class="code-language">Controller</span>
+                            <span class="code-simplicity">Declarative</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="attribute">#[controller("/api/users")]</span>
+<span class="keyword">impl</span> UserController {
+    <span class="attribute">#[post("")]</span>
+    <span class="attribute">#[body(user: CreateUserRequest)]</span>
+    <span class="keyword">async fn</span> <span class="function">create</span>(&self, user: CreateUserRequest) -> ElifResponse {
+        <span class="comment">// Direct access to typed body</span>
+        <span class="keyword">let</span> new_user = self.service.create(user).<span class="keyword">await</span>?;
+        ElifResponse::created().json(&new_user)
+    }
+    
+    <span class="attribute">#[put("/{id}")]</span>
+    <span class="attribute">#[param(id: i32)]</span>
+    <span class="attribute">#[body(data: UpdateUserRequest)]</span>
+    <span class="keyword">async fn</span> <span class="function">update</span>(&self, id: i32, data: UpdateUserRequest) -> ElifResponse {
+        <span class="comment">// Parameters automatically injected</span>
+        <span class="keyword">let</span> user = self.service.update(id, data).<span class="keyword">await</span>?;
+        ElifResponse::ok().json(&user)
+    }
+}</code></pre>
+                        </div>
+                        <div class="code-insight">LLMs understand this pattern instantly.</div>
+                    </div>
+                    
+                    <!-- Secondary Cards -->
+                    <div class="code-showcase-card secondary" data-reveal="float" style="--delay: 0.2s">
+                        <div class="code-card-header">
+                            <span class="code-language">Request API</span>
+                            <span class="code-simplicity">Type-safe</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="comment">// New helper methods</span>
+req.path_param_as::&lt;i32&gt;(<span class="string">"id"</span>)?
+req.query_param_as::&lt;bool&gt;(<span class="string">"active"</span>)?
+req.bearer_token()?
+req.json_async::&lt;User&gt;().<span class="keyword">await</span>?</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="code-showcase-card secondary" data-reveal="float" style="--delay: 0.4s">
+                        <div class="code-card-header">
+                            <span class="code-language">Middleware V2</span>
+                            <span class="code-simplicity">Laravel-style</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">impl</span> Middleware <span class="keyword">for</span> Auth {
+    <span class="keyword">fn</span> <span class="function">handle</span>(&self, req: ElifRequest, next: Next) -> NextFuture {
+        Box::pin(<span class="keyword">async move</span> {
+            <span class="keyword">if</span> !authenticated(&req) {
+                <span class="keyword">return</span> ElifResponse::unauthorized();
+            }
+            next.run(req).<span class="keyword">await</span>
+        })
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Before/After Comparison -->
+            <div class="paradigm-comparison" data-reveal="slide-up">
+                <div class="comparison-header">
+                    <h3>From manual to magical</h3>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-item before">
+                        <div class="comparison-label">Before: Manual everything</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// Old way: 20+ lines per endpoint</span>
+<span class="keyword">async fn</span> <span class="function">create_user</span>(req: Request&lt;Body&gt;) -> Result&lt;Response&lt;Body&gt;&gt; {
+    <span class="keyword">let</span> body = hyper::body::to_bytes(req.into_body()).<span class="keyword">await</span>?;
+    <span class="keyword">let</span> user_data: CreateUserRequest = serde_json::from_slice(&body)?;
+    
+    <span class="comment">// Manual validation</span>
+    <span class="keyword">if</span> user_data.email.is_empty() {
+        <span class="keyword">return</span> Ok(Response::builder()
+            .status(StatusCode::BAD_REQUEST)
+            .body(Body::from(<span class="string">"Email required"</span>))?);
+    }
+    
+    <span class="comment">// Manual service call</span>
+    <span class="keyword">let</span> service = UserService::new();
+    <span class="keyword">let</span> user = service.create(user_data).<span class="keyword">await</span>?;
+    
+    <span class="comment">// Manual response building</span>
+    <span class="keyword">let</span> json = serde_json::to_string(&user)?;
+    Ok(Response::builder()
+        .status(StatusCode::CREATED)
+        .header(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>)
+        .body(Body::from(json))?)
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item after">
+                        <div class="comparison-label">elif.rs: Declarative magic</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// New way: 5 lines</span>
+<span class="attribute">#[post("")]</span>
+<span class="attribute">#[body(user: CreateUserRequest)]</span>
+<span class="keyword">async fn</span> <span class="function">create</span>(&self, user: CreateUserRequest) -> ElifResponse {
+    <span class="keyword">let</span> new_user = self.service.create(user).<span class="keyword">await</span>?;
+    ElifResponse::created().json(&new_user)
+}</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,10 +431,11 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                             <span class="code-simplicity">5 lines</span>
                         </div>
                         <div class="code-content">
-                            <pre><code><span class="keyword">let</span> router = Router::new()
-    .get(<span class="string">"/"</span>, index)
-    .post(<span class="string">"/users"</span>, create)
-    .group(<span class="string">"/api"</span>, api_routes());</code></pre>
+                            <pre><code><span class="attribute">#[controller("/api")]</span>
+<span class="keyword">impl</span> ApiController {
+    <span class="attribute">#[get("/users")]</span>
+    <span class="keyword">async fn</span> <span class="function">list</span>(&self) -> ElifResponse { ... }
+}</code></pre>
                         </div>
                         <div class="code-insight">Clean. Declarative. Powerful.</div>
                     </div>
@@ -289,9 +447,9 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                             <span class="code-simplicity">Natural</span>
                         </div>
                         <div class="code-content">
-                            <pre><code><span class="keyword">async fn</span> <span class="function">handler</span>(req: &Request) {
-    <span class="keyword">let</span> user: User = req.json()?;
-    Ok(Response::json(&user)?)
+                            <pre><code><span class="keyword">async fn</span> <span class="function">handler</span>(req: &ElifRequest) {
+    <span class="keyword">let</span> user = req.json_async::&lt;User&gt;().<span class="keyword">await</span>?
+    ElifResponse::ok().json(&user)
 }</code></pre>
                         </div>
                     </div>
@@ -302,10 +460,10 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                             <span class="code-simplicity">Fluent</span>
                         </div>
                         <div class="code-content">
-                            <pre><code><span class="keyword">let</span> users = db.select()
-    .from(<span class="string">"users"</span>)
-    .where_like(<span class="string">"email"</span>, <span class="string">"%@domain.com"</span>)
-    .limit(<span class="number">10</span>).<span class="keyword">await</span>?;</code></pre>
+                            <pre><code><span class="keyword">let</span> users = User::query()
+    .where_email_like(<span class="string">"%@domain.com"</span>)
+    .limit(<span class="number">10</span>)
+    .get().<span class="keyword">await</span>?;</code></pre>
                         </div>
                     </div>
                 </div>
@@ -349,21 +507,58 @@ server.run(<span class="string">":3000"</span>).<span class="keyword">await</spa
                 
                 <div class="comparison-grid">
                     <div class="comparison-item before">
-                        <div class="comparison-label">Before: Verbose</div>
+                        <div class="comparison-label">Before: Complex routing</div>
                         <div class="comparison-code">
-                            <pre><code><span class="comment">// Traditional approach</span>
-<span class="keyword">let</span> <span class="keyword">mut</span> app = App::new();
-app.at(<span class="string">"/users"</span>).get(list_users);
-app.at(<span class="string">"/users"</span>).post(create_user);
-app.at(<span class="string">"/users/:id"</span>).get(show_user);</code></pre>
+                            <pre><code><span class="comment">// Traditional: Manual route registration</span>
+<span class="keyword">let</span> app = Router::new()
+    .route(<span class="string">"/api/users"</span>, get(list_users))
+    .route(<span class="string">"/api/users"</span>, post(create_user))
+    .route(<span class="string">"/api/users/:id"</span>, get(get_user))
+    .route(<span class="string">"/api/users/:id"</span>, put(update_user))
+    .route(<span class="string">"/api/users/:id"</span>, delete(delete_user))
+    .layer(cors_layer())
+    .layer(auth_layer());</code></pre>
                         </div>
                     </div>
                     
                     <div class="comparison-item after">
-                        <div class="comparison-label">elif.rs: Expressive</div>
+                        <div class="comparison-label">elif.rs: One attribute</div>
                         <div class="comparison-code">
-                            <pre><code><span class="comment">// Natural patterns</span>
-Router::resource(<span class="string">"/users"</span>, UserController);</code></pre>
+                            <pre><code><span class="comment">// Convention over configuration</span>
+<span class="attribute">#[controller("/api/users")]</span>
+<span class="attribute">#[middleware(cors, auth)]</span>
+<span class="keyword">impl</span> UserController {
+    <span class="comment">// All routes auto-generated</span>
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-item before">
+                        <div class="comparison-label">Before: Manual parsing</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// Extracting request data manually</span>
+<span class="keyword">let</span> id = req.param(<span class="string">"id"</span>)
+    .ok_or_else(|| Error::MissingParam)?
+    .parse::&lt;i32&gt;()
+    .map_err(|_| Error::InvalidParam)?;
+
+<span class="keyword">let</span> query = req.uri().query()
+    .ok_or_else(|| Error::MissingQuery)?;
+<span class="keyword">let</span> params = parse_query(query)?;
+<span class="keyword">let</span> active = params.get(<span class="string">"active"</span>)
+    .map(|v| v == <span class="string">"true"</span>)
+    .unwrap_or(false);</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item after">
+                        <div class="comparison-label">elif.rs: Type-safe helpers</div>
+                        <div class="comparison-code">
+                            <pre><code><span class="comment">// Direct, type-safe access</span>
+<span class="keyword">let</span> id = req.path_param_as::&lt;i32&gt;(<span class="string">"id"</span>)?;
+<span class="keyword">let</span> active = req.query_param_as::&lt;bool&gt;(<span class="string">"active"</span>)?;</code></pre>
                         </div>
                     </div>
                 </div>

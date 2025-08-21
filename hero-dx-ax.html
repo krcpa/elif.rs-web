@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="elif.rs — Where DX meets AX. The AI-native Rust framework." />
+  <title>elif.rs — DX ∩ AX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hero-dx-ax.css" />
+</head>
+<body>
+  <!-- Minimal top bar -->
+  <header class="top-bar">
+    <div class="top-bar-content">
+      <div class="logo">elif<span class="dot">.</span>rs</div>
+      <nav class="nav">
+        <a href="#install" class="nav-link">Install</a>
+        <a href="#docs" class="nav-link">Docs</a>
+        <a href="#github" class="nav-link">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-grid">
+      <!-- DX Side -->
+      <div class="dx-section">
+        <div class="section-label">DX</div>
+        
+        <h1 class="hero-title">
+          Less code.<br/>
+          More ship.<br/>
+          <span class="accent">Zero BS.</span>
+        </h1>
+        
+        <div class="dx-features">
+          <div class="dx-metric">
+            <div class="metric-number">-73%</div>
+            <div class="metric-text">code</div>
+          </div>
+          
+          <div class="dx-metric">
+            <div class="metric-number">2ms</div>
+            <div class="metric-text">reload</div>
+          </div>
+          
+          <div class="dx-metric">
+            <div class="metric-number">100%</div>
+            <div class="metric-text">safe</div>
+          </div>
+        </div>
+        
+        <div class="code-transform">
+          <div class="transform-label">Your code transforms:</div>
+          <div class="code-before" id="codeBefore">
+            <pre><code>// Before: 47 lines
+use actix_web::{web, App, HttpServer};
+use sqlx::{PgPool, postgres::PgPoolOptions};
+// ... 44 more lines</code></pre>
+          </div>
+          <div class="transform-arrow">→</div>
+          <div class="code-after" id="codeAfter">
+            <pre><code>// After: 3 lines
+use elif::prelude::*;
+serve(api![users, posts]).await</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center divider -->
+      <div class="center-divider">
+        <div class="divider-symbol">∩</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- AX Side -->
+      <div class="ax-section">
+        <div class="section-label">AX</div>
+        
+        <h2 class="ax-title">
+          AI gets it.<br/>
+          AI writes it.<br/>
+          <span class="accent">It works.</span>
+        </h2>
+        
+        <div class="ai-showcase">
+          <div class="ai-prompt">
+            <span class="prompt-icon">✨</span>
+            <span class="prompt-text">"Add user authentication with JWT"</span>
+          </div>
+          
+          <div class="ai-response">
+            <pre><code><span class="kw">use</span> elif::{auth, jwt};
+
+<span class="attr">#[auth(jwt)]</span>
+<span class="kw">async fn</span> <span class="fn">protected</span>(user: User) -> Response {
+    ok(user)
+}</code></pre>
+            <div class="ai-confidence">
+              <span class="confidence-label">AI Confidence</span>
+              <div class="confidence-bar">
+                <div class="confidence-fill" style="width: 98%"></div>
+              </div>
+              <span class="confidence-value">98%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ax-metrics">
+          <div class="ax-stat">
+            <div class="stat-icon">→</div>
+            <div class="stat-info">
+              <div class="stat-value">94%</div>
+              <div class="stat-label">accurate</div>
+            </div>
+          </div>
+          
+          <div class="ax-stat">
+            <div class="stat-icon">→</div>
+            <div class="stat-info">
+              <div class="stat-value">0</div>
+              <div class="stat-label">hallucinations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="hero-cta">
+      <div class="install-command">
+        <code>cargo install elif-cli && elif new my-app</code>
+        <button class="copy-btn" aria-label="Copy">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="cta-stats">
+        <span class="stat">⚡ 145k req/s</span>
+        <span class="stat">📦 12KB binary</span>
+        <span class="stat">🚀 0ms cold start</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="hero-dx-ax.js"></script>
+</body>
+</html>

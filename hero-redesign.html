@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="elif.rs — Where creativity meets professionalism on a minimalistic axis." />
+  <title>elif.rs — Rust that reads like poetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="hero-redesign.css" />
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero-showcase">
+    <div class="showcase-layout">
+      <!-- Left: Philosophy & Concepts -->
+      <div class="showcase-layout__philosophy">
+        <div class="showcase-layout__philosophy-content" data-reveal="slide-up">
+          <h1 class="hero-title">
+            <span class="hero-title__line">Rust that reads</span>
+            <span class="hero-title__line"><em>like poetry</em></span>
+          </h1>
+          
+          <div class="hero-principles">
+            <div class="principle">
+              <span class="principle__number">01</span>
+              <div class="principle__content">
+                <h3>Write with intention</h3>
+                <p>Every line serves a purpose. No boilerplate, no ceremony.</p>
+              </div>
+            </div>
+            
+            <div class="principle">
+              <span class="principle__number">02</span>
+              <div class="principle__content">
+                <h3>Code with clarity</h3>
+                <p>APIs that feel natural to humans and AI alike.</p>
+              </div>
+            </div>
+            
+            <div class="principle">
+              <span class="principle__number">03</span>
+              <div class="principle__content">
+                <h3>Ship with confidence</h3>
+                <p>Type-safe, performant, production-ready from day one.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-cta">
+            <button class="cta-primary">
+              Start building
+            </button>
+            <div class="install-command">
+              <code>cargo install elifrs</code>
+              <button class="copy-button" aria-label="Copy install command">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right: Code & Implementation -->
+      <div class="showcase-layout__implementation">
+        <!-- Primary floating card -->
+        <div class="floating-card floating-card--primary" data-reveal="float" style="--delay: 0.2s">
+          <div class="code-window">
+            <div class="code-window__header">
+              <span class="code-window__dot"></span>
+              <span class="code-window__dot"></span>
+              <span class="code-window__dot"></span>
+              <span class="code-window__title">main.rs</span>
+            </div>
+            <pre class="code-window__content"><code><span class="keyword">use</span> <span class="namespace">elif</span>::{router, response};
+
+<span class="attribute">#[tokio::main]</span>
+<span class="keyword">async fn</span> <span class="function">main</span>() {
+    <span class="keyword">let</span> app = router()
+        .<span class="method">get</span>(<span class="string">"/"</span>, || <span class="keyword">async</span> { 
+            response::ok(<span class="string">"Hello, poetry"</span>) 
+        })
+        .<span class="method">with_dx</span>()
+        .<span class="method">with_ax</span>();
+    
+    app.<span class="method">serve</span>(<span class="string">":3000"</span>).<span class="keyword">await</span>
+}</code></pre>
+          </div>
+        </div>
+        
+        <!-- Secondary floating cards -->
+        <div class="floating-card floating-card--secondary" data-reveal="float" style="--delay: 0.4s">
+          <div class="metric-card">
+            <div class="metric-card__value">145k</div>
+            <div class="metric-card__label">requests/sec</div>
+          </div>
+        </div>
+        
+        <div class="floating-card floating-card--tertiary" data-reveal="float" style="--delay: 0.6s">
+          <div class="dx-ax-card">
+            <div class="dx-ax-card__section">
+              <span class="dx-ax-card__title">DX</span>
+              <span class="dx-ax-card__score accent">98</span>
+            </div>
+            <div class="dx-ax-card__divider"></div>
+            <div class="dx-ax-card__section">
+              <span class="dx-ax-card__title">AX</span>
+              <span class="dx-ax-card__score accent">95</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom: Before/After Comparison -->
+    <div class="comparison-grid" data-reveal="slide-up" style="--delay: 0.8s">
+      <div class="comparison-grid__item">
+        <div class="comparison-label comparison-label--before">Before: Verbose</div>
+        <pre class="comparison-code"><code>use actix_web::{web, App, HttpServer, Result};
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+struct Response {
+    message: String,
+}
+
+async fn hello() -> Result<web::Json<Response>> {
+    Ok(web::Json(Response {
+        message: "Hello".to_string(),
+    }))
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .route("/", web::get().to(hello))
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
+}</code></pre>
+      </div>
+      
+      <div class="comparison-grid__item">
+        <div class="comparison-label comparison-label--after">elif.rs: Expressive</div>
+        <pre class="comparison-code"><code>use elif::{router, response};
+
+#[tokio::main]
+async fn main() {
+    router()
+        .get("/", || async { 
+            response::json({"message": "Hello"}) 
+        })
+        .serve(":8080").await
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <script src="hero-redesign.js"></script>
+</body>
+</html>
